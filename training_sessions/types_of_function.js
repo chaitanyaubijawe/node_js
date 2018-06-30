@@ -1,10 +1,7 @@
 // function declaration....
 
 function add(arg_1, arg_2){
-
-
   return arg_1 + arg_2;
-
 }
 
 
@@ -21,7 +18,6 @@ var addFE = function (arg_1, arg_2) {
 
 var addition = addFE(1,2);
 console.log("addition FE " , addition);
-
 
 (function (arg_1, arg_2) {
     console.log("IIFE", arg_1, arg_2);
@@ -52,16 +48,4 @@ var result = 0;
 var addAFEOneLiner = (arg_1, arg_2) =>  result = arg_1 + arg_2 ;
 var addition = addAFEOneLiner(1,2);
 
-console.log("value of result :: ", result);
-
-
-// World map:
-// {"IND":{ "MP" :["Jabalpur"], "MAH":["Pune"]} , "US":{"CT":["danbury.."]} }
-var worldMap = {IND : {"MAH":["Pune"]}}
-var stateMapOfIndia = worldMap['IND'];
-
-//stateMapOfIndia = {"MAH":["Pune"]}
-
-var citiesOfMah = stateMapOfIndia['MAH'];
-
-// citiesOfMah = ['Pune']
+console.log("value of result :: ", resu

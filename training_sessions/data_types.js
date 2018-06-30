@@ -72,3 +72,56 @@ for(var propertyName  in obj){
 
 }
 */
+var obj = {name_1:"value_1", name_2:"value_2"};
+console.log(Object.values(obj));
+console.log(Object.keys(obj));
+console.log(Object.entries(obj));
+
+
+var arr = [1,2,3,4];
+
+arr.forEach(
+
+	function(value){
+
+		console.log("Values inside array.... ", value);
+	}
+
+)
+
+
+
+var forEach = function(fn)
+{
+
+/*var fn = function(value){
+	console.log("Logging arguments... ", value)
+}*/
+
+
+for(var i=0;i< arr.length; i ++)
+{
+
+	//console.log("iterating over array ", arr[i]);
+	fn(arr[i]);
+}
+
+
+}
+
+
+
+forEach(function(value){
+	console.log("Logging arguments... ", value)
+});
+
+
+
+
+/*forEach(
+
+	function (value){
+			console.log("Hey we are iterating over an array :: ", value);
+		}
+
+)*/
