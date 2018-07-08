@@ -7,6 +7,11 @@ var  getCitiesByStateName = function (stateName){
 
         var city = stateName + "_CITY_" + num ;
 
+        if(num == 5){
+          //continue;
+          break;
+          //return ;//cities;
+        }
         cities.push(city);
     }
 
@@ -63,3 +68,30 @@ var printWorldMap = function (worldMap) {
 
 
 printWorldMap(worldMap);
+
+// switch case
+var expression  = "abc"
+var expression  = "xyz"
+var expression  = "pqr"
+var expression  = "stu"
+var expression  = "sse"
+var expression  = 4
+
+switch(expression){
+  case "abc":
+      console.log("Exression evaluated as abc");
+      break;
+  case "xyz":
+      console.log("Exression evaluated as ", expression);
+      break;
+  case "pqr":
+  case "stu":
+      console.log("Both pqr and stu");
+      break;
+  case 4:
+      console.log("integer..");
+      break;
+  default:
+      console.log("No matching expression found...");
+      break;
+}
