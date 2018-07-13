@@ -15,7 +15,7 @@ var flag = true;
 
 console.log("String concatination + " + a);
 console.log("String concatination ',' " , a);
-console.log(`String concatination using \`  ${a} `);
+console.log(`String concatination using `  ${a} `);
 
 console.log("String + number : ", ( a + num));
 console.log("String + boolean : ", ( a + flag));
