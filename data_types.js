@@ -8,6 +8,8 @@ console.log("null == undefined = ", a == b);
 
 var a = "string";
 var num = 5;
+
+
 var flag = true;
 
 

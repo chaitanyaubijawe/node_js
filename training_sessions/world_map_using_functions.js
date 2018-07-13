@@ -1,7 +1,7 @@
 var  getCitiesByStateName = function (stateName){
 
     var cities = [];
-
+    //break; error...
     for(var num = 1; num<=10 ; num ++)
     {
 
@@ -95,3 +95,23 @@ switch(expression){
       console.log("No matching expression found...");
       break;
 }
+
+
+
+
+// string concatination
+var number = 1;
+var str = "abc " + number // abc 1
+
+/// abc1
+var query = "INSERT INTO student (id, name, age, phnumber) values (1, 'name_1', 1,1)"
+
+var query = "INSERT INTO student (id, name, age, phnumber) values ( " +  number   + ", 'name_ " + number + "', "+number+",1)"
+
+
+
+
+var name = "'name_1'"
+
+
+name = "'name_" + number  + "'"// 'name_1'
