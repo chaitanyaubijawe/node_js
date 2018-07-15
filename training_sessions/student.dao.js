@@ -23,11 +23,12 @@ var insertMultipleStudent = function (count) {
 	for(var num = 0; num<= count ; num++)
 	{
 
-		insertStudent({id:num, name:"name_" + num, age:num});
+		console.log(insertStudent({id:num, name:"name_" + num, age:num}));
 	}
 	// body...
 }
 
+insertMultipleStudent(10);
 
 var updateStudent = function (objToUpdate = new Object(), id) {
 
