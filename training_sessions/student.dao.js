@@ -1,19 +1,26 @@
 var insertStudent = function (objToInsert = new Object()) {
 
 
-	var query = "INSERT INTO student (id, name, age) VALUES ( ";
+	var query = "INSERT INTO student  (" + generateCommaSeparatedString(objToInsert) + ") VALUES ( ";
 
 	for(var columnName in objToInsert){
 
 		query +=  " '"+ objToInsert[columnName] + "'," 
 	}
 
-	query = query.slice(0,-1) + ")";
+	query = query.slice(0,-1) + ");";
 
 
 	return query;
 }
 
+var generateCommaSeparatedString = function(obj){
+		var string = ""
+		for(key in obj){
+			string += key + ","
+		}
+		return string.slice(0, -1);
+}
 
 console.log(insertStudent({id:1, name:"name", age:20}));
 
@@ -29,7 +36,6 @@ var insertMultipleStudent = function (count) {
 }
 
 insertMultipleStudent(10);
-
 var updateStudent = function (objToUpdate = new Object(), id) {
 
 
@@ -44,7 +50,7 @@ var updateStudent = function (objToUpdate = new Object(), id) {
 
 	query = query.slice(0,-1);
 
-	query += " WHERE id = " + id;
+	query += " WHERE id = " + id + ";";
 
 
 	return query;
