@@ -13,7 +13,12 @@ Out - Update Query String
 function updateStudent(obj,id){
     var query = "UPDATE student set "
 	for (key of Object.keys(obj)){
-		query += key + "=" + obj[key] + ",";
+		if (typeof obj[key] == 'string'){
+		   query += key + "=" + "\"" + obj[key] + "\"" + ",";
+		}
+	    else{
+			query += key + "=" +  obj[key] + ",";
+		}
 	}
 	query = query.substring(0, query.length -1);
 	query += " where id = " + id +";";
@@ -34,7 +39,12 @@ function updateStudentIn(obj,ids){
     var updateInQuery = "UPDATE student set "
 
 	for (var key of Object.keys(obj)){
-		 updateInQuery += key + "=" + obj[key] + ",";
+      if (typeof obj[key] == 'string'){
+		 updateInQuery += key + "=" + "\"" + obj[key] + "\"" + ",";
+	  }
+	  else {
+		  updateInQuery += key + "=" + obj[key] + ",";
+	  }
 	}
 	updateInQuery = updateInQuery.substring(0, updateInQuery.length -1);
 	updateInQuery += " where id IN(";
@@ -65,7 +75,12 @@ function insertsinglestudent(singleobject){
     InsertQueryName = InsertQueryName.substring(0, InsertQueryName.length -1);
     InsertQueryName += ") VALUES(" 
 	for (var value of Object.keys(singleobject)){
-	  InsertQueryName += singleobject[value] + ",";
+		if (typeof singleobject[value] =='string'){
+	         InsertQueryName += "\"" + singleobject[value] + "\"" + ",";
+		}
+		else {
+		    InsertQueryName += singleobject[value] + ",";
+		}
 	}
 	InsertQueryName = InsertQueryName.substring(0, InsertQueryName.length -1);
     InsertQueryName +=");"
@@ -89,7 +104,12 @@ function insertStudents(obj){
     InsertQueryName = InsertQueryName.substring(0, InsertQueryName.length -1);
     InsertQueryName += ") VALUES(" 
 	for (var value of Object.keys(obj)){
-	  InsertQueryName += obj[value] + ",";
+		if (typeof obj[value] == 'string'){
+		    InsertQueryName += "\"" + obj[value] + "\"" + ",";
+		}
+		else {
+	        InsertQueryName += obj[value] + ",";
+		}
 	}
 	InsertQueryName = InsertQueryName.substring(0, InsertQueryName.length -1);
     InsertQueryName +=");"
