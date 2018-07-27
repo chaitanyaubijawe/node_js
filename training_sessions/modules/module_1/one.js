@@ -16,3 +16,6 @@ var m3 = function () {
 
 
 module.exports = {m1,m2,m3};
+// module.exports.m1 = m1
+// module.exports.m2 = m2
+// module.exports.m3 = m3
