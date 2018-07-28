@@ -1,5 +1,8 @@
 var one = require("./one")
+
+// {m1:function(){}}
 one.m1();
+
 
 console.log(module);
 
