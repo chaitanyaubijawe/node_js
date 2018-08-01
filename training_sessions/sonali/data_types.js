@@ -147,3 +147,35 @@ for(var key in obj){
   console.log("Keys and values inside object are :: ", key, obj[key]);
 
 }
+
+
+var key_arr = Object.keys(obj);//["name", "fName", "salary"]
+
+console.log(key_arr);
+
+for(var index in key_arr){
+
+
+  console.log("--- Keys --- ", key_arr[index], "-- value --",obj[key_arr[index]]);
+}
+
+
+
+var value_arr  =  Object.values(obj);
+
+for(var value in value_arr){
+
+  console.log("Value in obj using in operator..... :: ", value_arr[value]);
+}
+
+
+for(var value of Object.values(obj)){
+
+  console.log("Value in obj :: ", value);
+}
+
+
+
+// World Map
+
+// {"IND": {"MAH":["Pune", "Mumbai"]}, "US": {"CT" : ["New York", "ABC"]} }
