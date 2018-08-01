@@ -1,3 +1,5 @@
+"use strict";
+
 var selectQuery = "SELECT * FROM student WHERE id = 1";
 var selectQuery = "SELECT * FROM student WHERE id = 2";
 var selectQuery = "SELECT * FROM student WHERE id = 3";

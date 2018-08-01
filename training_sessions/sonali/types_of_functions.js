@@ -1,5 +1,5 @@
 // function declaration..
-
+"use strict";
 function m1()
 {
   console.log("Non argument function declaration.......");

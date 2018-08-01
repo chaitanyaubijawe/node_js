@@ -1,3 +1,4 @@
+"use strict";
 var w_map = {
   "IND": {
     "MAH": ["PUNE", "Mumbai"],
