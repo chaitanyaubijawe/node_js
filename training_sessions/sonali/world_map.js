@@ -109,3 +109,30 @@ displayWMap();
 //     Indore
 // UP:
 //
+
+// changes to map
+
+"use strict";
+var worldMap = {"IND" : { "MAH":["Pune","Nasik","Mumbai"], 
+                          "MP" :["Bhopal","Indore","Gwalior"], 
+                          "UP" :["Lucknow", "Agra", "Kanpur"] 
+                         } 
+                }  
+var wMap = {};
+var sMap = {};
+var mahCities = [];
+var mpCities = [];
+var upCities = [];
+
+mahCities = ["Pune","Nasik", "Mumbai"];
+sMap["MAH"] = mahCities;
+
+mpCities = ["Bhopal", "Indore", "Gwalior"];
+sMap["MP"] = mpCities;
+
+upCities = ["Lucknow", "Agra", "Kanpur"];
+sMap["UP"] = upCities;
+
+wMap["IND"] = sMap;
+
+console.log("World Map :", worldMap);
