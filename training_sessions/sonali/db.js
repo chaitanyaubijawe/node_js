@@ -46,6 +46,7 @@ var updateQuery = "UPDATE student set name='Name-1', lName = 'lName-1', age=1, p
 // generateUpdateQuery(studentInfo);
 
 var studentInfo = {"id":"1", "name":"Name-1", "lName":"lName-1", "age":"1", "phNumber":"1"};
+var studentInfo = {"id":"11211", "name1":"Name-111111", "lName111":"lName-111111", "ag111e":"111111", "p111111hNumber":"111111"};
 
 
 function generateInsertQuery(studentInfo) {
@@ -64,6 +65,8 @@ function generateInsertQuery(studentInfo) {
   console.log(query);
   return query;
 }
+generateInsertQuery(studentInfo);
+
 
    function generateUpdateQuery(studentInfo)
   {
