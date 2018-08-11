@@ -8,7 +8,7 @@ const express = require('express');
 
 
 let server = http.createServer( function (req, res) {
-  // IncomingMessage
+  // IncomingMessage :: req
 
   let reqUrl = url.parse(req.url);
   console.log("always been called whenever there is a request......", reqUrl.path);

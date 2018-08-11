@@ -99,7 +99,8 @@ function m4(){
 
       try{
 
-
+        throw "error";
+        //throw {};
         //a.slice(0,-1);
           if(a==2)
           {
@@ -107,8 +108,10 @@ function m4(){
           }
         // break
         // return
+        // throw
       }catch(e){
 
+        console.log(e);
 
       }finally{
 
