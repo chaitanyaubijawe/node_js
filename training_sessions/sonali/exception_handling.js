@@ -9,8 +9,8 @@ function m1(){
 
     let a = undefined;
     try{
-
-      a = a.slice(0,-1);
+      // console.log( syntactical errors are not caught in try and catch ...
+    //  a = a.slice(0,-1);
       console.log(a);
 
     }
