@@ -1,0 +1,31 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "This is sample project. wherein you will get WEB api and CRUD operation using WEB api's",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyaubijawe/node_js.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mysql",
+    "mongoose",
+    "angular"
+  ],
+  "author": "CNB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitanyaubijawe/node_js/issues"
+  },
+  "homepage": "https://github.com/chaitanyaubijawe/node_js#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
+  }
+}
