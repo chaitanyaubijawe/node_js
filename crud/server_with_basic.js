@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const db = require('./server_modules/db/db.connection').dbConnection;
 
 
 
@@ -69,6 +70,27 @@ app.put("/info", function (req, res) {
     let response = req.body.userName + " :: PUT request";
     res.status(200).send(response);
     //res.end();
+
+});
+
+app.get("/sonali/fetchstudent", function (req, res) {
+
+  db.executeQuery(function (results) {
+
+
+      let response = results;
+
+      // do db related mapping thing...
+
+      for(let row of results){
+
+          console.log("-- id -- ", row.id, "-- name -- ", row.name, "-- price -- ", row.price);
+
+      }
+
+
+      res.send(response);
+  });
 
 });
 

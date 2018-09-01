@@ -1,0 +1,8 @@
+{
+  "db": {
+    "connectionLimit": 10,
+    "host": "localhost-prd",
+    "user": "root-prd",
+    "database": "cnb_prd"
+  }
+}

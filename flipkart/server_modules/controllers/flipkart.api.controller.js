@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productsRepository = require("../repositoryDB/products.repository").productsRepository;
+const { check, validationResult } = require('express-validator/check');
 
 
 class FlipkartApiController{
@@ -38,7 +39,47 @@ class FlipkartApiController{
 
     addProducts(){
 
-        router.post("/product", function (req, res) {
+        router.post("/product",  [
+            check('name').isLength({ min: 5 })
+        ]
+            ,  function (req, res) {
+
+
+
+            /*
+            * function (req, res, next) {
+
+            let name =  req.body.name;
+
+            if(name.length > 10){
+
+                res.status(400).send({"error":"Only 10 characters are allowed in request."})
+                return;
+            }else{
+
+                next();
+            }
+
+
+        }
+            * */
+            // request object???
+
+            // /// validate request ?
+            // let name =  req.body.name;
+            //
+            // if(name.length > 10){
+            //
+            //     res.status(400).send({"error":"Only 10 characters are allowed in request."})
+            //     return;
+            // }
+
+
+                const errors = validationResult(req);
+
+                if (!errors.isEmpty()) {
+                    return res.status(400).json({ errors: errors.array() });
+                }
 
             productsRepository.addProduct(req.body, function (results) {
 

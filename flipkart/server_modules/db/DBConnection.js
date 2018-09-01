@@ -2,14 +2,14 @@ const mysql = require('mysql');
 class DBConnection{
 
 
-    initializeDB(){
+    initializeDB(config){
 
-        let config = {
-            connectionLimit : 10,
-            host     : 'localhost',
-            user     : 'root',
-            database : 'cnb'
-        };
+        // let config = {
+        //     connectionLimit : 10,
+        //     host     : 'localhost',
+        //     user     : 'root',
+        //     database : 'cnb'
+        // };
 
         this.pool  = mysql.createPool(config);
         console.log("here")
