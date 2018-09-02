@@ -1,0 +1,51 @@
+// to create or use existing DB...
+use cnb;
+
+// to view all collections present inside you DB....
+show collections;
+
+//to insert a record into your collections
+// db.COLLECTION_NAME.insert({});
+
+db.abc.insert({"a":"this is value"});
+db.abc.insert({"colume_1":"this is value", "column_2": "value in column_2"});
+
+
+// to select all documents
+// equivalent to select * from table;
+db.abc.find();
+db.abc.find().pretty();
+db.abc.find({"a":"this is value"}).pretty();
+
+
+5b8bbcf892b63e893bc2c023
+
+5b8bbcf892b63e893bc2c023
+
+
+show dbs
+use dbName
+db.createCollection(name)
+
+db.collectionName.insert({"asd":"asd"});
+db.collectionName.find() // to find all documents. select * alternate
+
+
+db.COLLECTION_NAME.drop()
+db.COLLECTION_NAME.remove({criteria})
+
+db.COLLECTION_NAME.update({"asd":"asd"}, {"asd_1":"asd_1"})
+
+
+
+
+
+db.abc.update({"a":"this is value"}, {"b":"this is B value"})
+db.abc.save({"b":"this is B value"}, {"a":"this is value"});
+
+
+
+
+db.abc.update({"a":"this is value"}, {"a":"this is new A value", "b":"this is b value"})
+
+db.abc.update({"b":"this is B value"}, {"b":"this is B value updated"},{ upsert: true, , multi: true })
