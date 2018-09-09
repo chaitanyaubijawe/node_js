@@ -3,12 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Flipkart</title>
+    <script>
+
+
+        console.log("Hi there.... script tag is called...")
+
+        function m1() {
+
+            let userName = document.getElementById("userName").value;
+            let pwd = document.getElementById("pwd").value;
+            //alert('clicked on a button'+ obj.id);
+            console.log("username entered is :: ", userName);
+            console.log("pwd entered is :: ", pwd);
+
+
+
+            if(userName === 'ADMIN' && pwd === 'ADMIN'){
+
+                // step 1: create object of XMLHttpRequest...
+                let httpReq = new XMLHttpRequest();
+
+                httpReq.onreadystatechange = function(){
+
+                  // here jo this.......will be httpReq...
+                  // readyState :: will hold the status of your actual request.....
+                  // 0,1,2,3,4
+
+                  if(this.readyState === 4 && this.status === 200){
+
+
+                    console.log(this.responseText);
+
+
+
+                    let productsObj = JSON.parse(this.responseText);
+
+                    console.log("After jsonify...", productsObj);
+
+                        document.getElementById("data").innerHTML += this.responseText;
+
+
+                  }
+
+
+
+                }
+                httpReq.open("GET", "/services/products", true);
+                httpReq.send();
+
+
+
+
+
+
+            }
+
+        }
+    </script>
 </head>
-<body>
+
+<body onload="">
 
 
-Welcome to flipkart....
+Welcome to flipkart....<br/>
+UserName : <input type="text" id="userName" name="dummy"/><br/>
+Password : <input type="password" id="pwd" name="dummy"/><br/>
 
+<button onclick="alert('clicked on a button')">Click Me</button>
+<button onclick="m1()" id="btn">Click Me! Another btn</button>
+
+<div id="data">
+
+
+</div>
 
 </body>
 </html>
