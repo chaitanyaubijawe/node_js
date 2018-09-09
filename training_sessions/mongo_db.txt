@@ -49,3 +49,5 @@ db.abc.save({"b":"this is B value"}, {"a":"this is value"});
 db.abc.update({"a":"this is value"}, {"a":"this is new A value", "b":"this is b value"})
 
 db.abc.update({"b":"this is B value"}, {"b":"this is B value updated"},{ upsert: true, , multi: true })
+db.abc.remove({"b":"this is B value updated"});
+db.abc.find({"b":"this is B value updated"});

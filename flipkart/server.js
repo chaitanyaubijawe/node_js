@@ -49,7 +49,19 @@ class Server {
             res.sendFile(path.join(__dirname, "index.html"));
         });
 
+        if(process.env.NODE_ENV !== 'prd'){
 
+            app.use("/sdfsd", function (req, res) {
+
+                res.send("using process env variable....")
+                
+            });
+
+        }
+        app.listen(PORT, function () {
+
+            console.log("Server started on port : ", PORT)
+        })
         console.log("__dirname and index using path....:: " , path.join(__dirname, "index.html"));
     }
 
@@ -63,10 +75,7 @@ class Server {
 
     startServer() {
         // listen to port. Start your server here.
-        app.listen(PORT, function () {
 
-            console.log("Server started on port : ", PORT)
-        })
 
     }
 
@@ -74,3 +83,13 @@ class Server {
 }
 
 new Server();
+
+// Other node modules to be studied.
+
+// core
+//1. Http: crawling...
+//2. fs
+// third party
+//1. memcache
+//2. https://www.npmjs.com/package/express-static-gzip
+//3.
