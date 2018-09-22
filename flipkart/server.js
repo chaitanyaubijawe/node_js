@@ -40,7 +40,7 @@ class Server {
         // register your router here.
         app.use("/services", flipkartApiController.getRouter());
 
-
+        app.use(express.static(path.join(__dirname, 'static')));
         app.use("*", function (req, res) {
 
 
@@ -58,6 +58,9 @@ class Server {
             });
 
         }
+
+
+
         app.listen(PORT, function () {
 
             console.log("Server started on port : ", PORT)

@@ -1,143 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Flipkart</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script>
+<meta charset="UTF-8">
+<title>Flipkart</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
 
 
-        console.log("Hi there.... script tag is called...")
+console.log("Hi there.... script tag is called...")
 
-        function getData() {
+function getData() {
 
-            let userName = document.getElementById("userName").value;
-            let pwd = document.getElementById("pwd").value;
-            //alert('clicked on a button'+ obj.id);
-            console.log("username entered is :: ", userName);
-            console.log("pwd entered is :: ", pwd);
-
-
-
-            if(userName === 'ADMIN' && pwd === 'ADMIN'){
-
-                // step 1: create object of XMLHttpRequest...
-                let httpReq = new XMLHttpRequest();
-
-                httpReq.onreadystatechange = function(){
-
-                  // here jo this.......will be httpReq...
-                  // readyState :: will hold the status of your actual request.....
-                  // 0,1,2,3,4
-
-                  if(this.readyState === 4 && this.status === 200){
-
-
-                    console.log(this.responseText);
+let userName = document.getElementById("userName").value;
+let pwd = document.getElementById("pwd").value;
+//alert('clicked on a button'+ obj.id);
+console.log("username entered is :: ", userName);
+console.log("pwd entered is :: ", pwd);
 
 
 
-                    let productsObj = JSON.parse(this.responseText);
+if(userName === 'ADMIN' && pwd === 'ADMIN'){
 
-                    console.log("After jsonify...", productsObj);
+// step 1: create object of XMLHttpRequest...
+let httpReq = new XMLHttpRequest();
 
-                        document.getElementById("data").innerHTML += this.responseText;
+httpReq.onreadystatechange = function(){
 
+// here jo this.......will be httpReq...
+// readyState :: will hold the status of your actual request.....
+// 0,1,2,3,4
 
-                  }
-
-
-
-                }
-                httpReq.open("GET", "/services/products", true);
-                httpReq.send();
+if(this.readyState === 4 && this.status === 200){
 
 
-
+console.log(this.responseText);
 
 
 
-            }
+let productsObj = JSON.parse(this.responseText);
 
-        }
+console.log("After jsonify...", productsObj);
 
-        function  addProduct() {
-
-            let productId = document.getElementById('pId').value;
-            let productPrice = document.getElementById('price').value;
-            let productName = document.getElementById('name').value;
+document.getElementById("data").innerHTML += this.responseText;
 
 
-
-            // "{'id':'15', 'name':'iphone 11', 'price':50000}"
-            let reqData = {
-                "id": productId,
-                "name": productName,
-                "price": productPrice
-            };
+}
 
 
-            var data = JSON.stringify(reqData);
 
-            var xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
-
-            xhr.addEventListener("readystatechange", function () {
-                if (this.readyState === 4) {
-                    console.log(this.responseText);
-                    document.getElementById("data_add").innerHTML = "";
-                    document.getElementById("data_add").innerHTML += this.responseText;
-                }
-            });
-
-            xhr.open("POST", "http://localhost:8080/services/product");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(data);
-
-        }
+}
+httpReq.open("GET", "/services/products", true);
+httpReq.send();
 
 
-        function addDataJquery() {
-
-            let productId = $('#pId')[0].value;//document.getElementById('pId').value;
-            let productPrice = $('#price')[0].value ;//document.getElementById('price').value;
-            let productName = $('#name')[0].value;//document.getElementById('name').value;
-
-            // "{'id':'15', 'name':'iphone 11', 'price':50000}"
-            let reqData = {
-                "id": productId,
-                "name": productName,
-                "price": productPrice
-            };
-            var data1 = JSON.stringify(reqData);
-
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "http://localhost:8080/services/product",
-                "method": "POST",
-                "headers": {
-                    "Content-Type": "application/json"
-                },
-                "data":data1
-            };
-
-            $.ajax(settings).done(function (response) {
-                console.log(response);
-
-                $('#data_add')[0].innerHTML = "";
-                $('#data_add')[0].innerHTML += response['name'];
 
 
-                $('#pId')[0].value = response['name'];
-                $('#pId')[0].disabled = true
 
-            });
-        }
-    </script>
+
+}
+
+}
+
+function  addProduct() {
+
+let productId = document.getElementById('pId').value;
+let productPrice = document.getElementById('price').value;
+let productName = document.getElementById('name').value;
+
+
+
+// "{'id':'15', 'name':'iphone 11', 'price':50000}"
+let reqData = {
+"id": productId,
+"name": productName,
+"price": productPrice
+};
+
+
+var data = JSON.stringify(reqData);
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+if (this.readyState === 4) {
+console.log(this.responseText);
+document.getElementById("data_add").innerHTML = "";
+document.getElementById("data_add").innerHTML += this.responseText;
+}
+});
+
+xhr.open("POST", "http://localhost:8080/services/product");
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.send(data);
+
+}
+
+
+function addDataJquery() {
+
+let productId = $('#pId')[0].value;//document.getElementById('pId').value;
+let productPrice = $('#price')[0].value ;//document.getElementById('price').value;
+let productName = $('#name')[0].value;//document.getElementById('name').value;
+
+// "{'id':'15', 'name':'iphone 11', 'price':50000}"
+let reqData = {
+"id": productId,
+"name": productName,
+"price": productPrice
+};
+var data1 = JSON.stringify(reqData);
+
+var settings = {
+"async": true,
+"crossDomain": true,
+"url": "http://localhost:8080/services/product",
+"method": "POST",
+"headers": {
+"Content-Type": "application/json"
+},
+"data":data1
+};
+
+$.ajax(settings).done(function (response) {
+console.log(response);
+
+$('#data_add')[0].innerHTML = "";
+$('#data_add')[0].innerHTML += response['name'];
+
+
+$('#pId')[0].value = response['name'];
+$('#pId')[0].disabled = true
+
+});
+}
+</script>
 </head>
 
 <body>
@@ -182,6 +182,73 @@ Name of Product : <input type="text" id="name" /><br/>
 
 
 </div>
-</body>
 
+
+<div class="media">
+<img class="mr-3" src="https://static.toiimg.com/photo/54946764/Apple-iPhone-7.jpg" alt="Generic placeholder image">
+<div class="media-body">
+<h5 class="mt-0">Product Name</h5>
+Description.....
+</div>
+</div>
+</body>
 </html>
+
+
+
+
+
+<!--<!doctype html>-->
+<!--<html>-->
+
+<!--<head>-->
+    <!--<script src="/angular.js">-->
+    <!--</script>-->
+    <!--<script>-->
+
+        <!--var app = angular.module('myApp', []);-->
+
+        <!--app.factory("myFactory", function ($http) {-->
+
+            <!--function getData() {-->
+                <!--return $http.get("/services/products");-->
+
+            <!--}-->
+            <!--return {getData : getData}-->
+        <!--});-->
+
+        <!--app.controller('myCtrl', function($scope, myFactory) {-->
+            <!--$scope.firstName= "John";-->
+            <!--$scope.lastName= "This is coming from js...";-->
+            <!--myFactory.getData().then(function (data) {-->
+                <!--$scope.users = data;-->
+
+            <!--}).catch(function (error) {-->
+                <!--console.log(error);-->
+            <!--});-->
+
+        <!--});-->
+
+
+
+
+
+    <!--</script>-->
+
+<!--</head>-->
+
+<!--<body>-->
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+
+
+    <!--First Name: <input type="text" ng-model="firstName"><br>-->
+    <!--Last Name: <input type="text" ng-model="lastName"><br>-->
+
+
+    <!--<h1>Hello {{firstName}}!</h1>-->
+    <!--<h1>Hello {{lastName}}!</h1>-->
+    <!--<h1>Hello {{users}}!</h1>-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
