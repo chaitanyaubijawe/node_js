@@ -1,0 +1,24 @@
+// This will install angular cli globally on your machine....
+npm install -g @angular/cli
+
+// create new application
+ng new flipkart-angular
+
+// go inside created  directory....
+cd flipkart-angular
+
+// to run ypur angular code behind a server......
+ng serve
+
+// ts-node and typescript
+npm install --save typescript
+ typescript : these are npm packages. use them for converting your ts to js.....
+ node_modules/typescript/bin/tsc a.ts
+
+npm install --save ts-node
+ ts-node :: this is used to run your ts file.
+ node_modules/ts-node/dist/bin.js a.ts
+
+// to generate a component using angular cli..
+
+ng  g c add.product

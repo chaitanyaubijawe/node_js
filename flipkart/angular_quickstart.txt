@@ -1,3 +1,0 @@
-// This will install angular cli globally on your machine....
-npm install -g @angular/cli
-

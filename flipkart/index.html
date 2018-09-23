@@ -217,17 +217,28 @@ Description.....
             <!--return {getData : getData}-->
         <!--});-->
 
-        <!--app.controller('myCtrl', function($scope, myFactory) {-->
-            <!--$scope.firstName= "John";-->
-            <!--$scope.lastName= "This is coming from js...";-->
-            <!--myFactory.getData().then(function (data) {-->
-                <!--$scope.users = data;-->
+        <!--app.controller('myCtrl',-->
 
-            <!--}).catch(function (error) {-->
-                <!--console.log(error);-->
-            <!--});-->
+            <!--function($scope, myFactory)-->
+            <!--{-->
+                <!--$scope.firstName= "John";-->
+                <!--$scope.lastName= "This is coming from js...";-->
 
-        <!--});-->
+            <!--// on btn click-->
+                <!--$scope.getProducts = function(){-->
+
+                    <!--myFactory.getData().then(function (data) {-->
+                        <!--$scope.users = data;-->
+
+                    <!--}).catch(function (error) {-->
+                        <!--console.log(error);-->
+                    <!--});-->
+
+
+                <!--}-->
+
+            <!--}-->
+        <!--);-->
 
 
 
@@ -244,7 +255,7 @@ Description.....
     <!--First Name: <input type="text" ng-model="firstName"><br>-->
     <!--Last Name: <input type="text" ng-model="lastName"><br>-->
 
-
+    <!--<button ng-click="getProducts()"> This is Angular 1 Btn</button>-->
     <!--<h1>Hello {{firstName}}!</h1>-->
     <!--<h1>Hello {{lastName}}!</h1>-->
     <!--<h1>Hello {{users}}!</h1>-->
