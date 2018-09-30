@@ -1,0 +1,45 @@
+This is POC!!
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-8">
+
+
+      <button class="btn btn-primary" (click)="showToggle()"> Submit </button>
+
+
+    </div>
+    <div class="col-sm-8">
+
+      <div *ngIf="shouldShowTxt; else showNotAvlbl">
+
+        This is coming from ng if part.
+        NG If is true now.....
+
+      </div>
+
+
+      <ng-template #showNotAvlbl>
+
+        This will come if toggle is false...
+
+
+      </ng-template>
+
+
+    </div>
+
+    <div class="col-sm-8" *ngFor="let item of products; index as i">
+
+      I want this to be added  dynamically ::- {{i}}
+
+
+    </div>
+
+
+    <button class = "btn btn-primary" myAlert> Text </button>
+  </div>
+
+</div>
