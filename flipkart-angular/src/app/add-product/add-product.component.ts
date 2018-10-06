@@ -20,7 +20,7 @@ export class AddProductComponent implements OnInit {
   shouldEnable:boolean = true; // this is property binding....
   biDirectional:string = "This is biderectional binding....";
   product = {};
-  productTS:Product = new Product();
+  productTS:Product = new Product(null,null, null);
   constructor() {
 
     console.log("Inside constructor :: ")

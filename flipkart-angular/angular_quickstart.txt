@@ -22,3 +22,6 @@ npm install --save ts-node
 // to generate a component using angular cli..
 
 ng  g c add.product
+
+// will generate component without .spec.ts files.
+ng g c dashboard --spec=false

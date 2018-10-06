@@ -1,0 +1,35 @@
+<p>
+  dashboard works!
+</p>
+
+<div class="input-group col-sm-4 ">
+  <input type="text" class="form-control" placeholder="Search Products" aria-label="Search Products" aria-describedby="basic-addon2" [(ngModel)] = "searchText" #searchQuery>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="searchProducts(searchQuery)">Search</button>
+  </div>
+</div>
+
+
+<div class="container">
+
+
+  <div class="row">
+
+
+    <div class="col-md-5" *ngFor="let productElem of products" >
+
+
+
+      <app-view-products [productElement]="productElem" (onPDisplay)="productDisplayed($event)">
+
+        this is the view product thing....
+
+
+
+      </app-view-products>
+
+
+    </div>
+
+  </div>
+</div>
