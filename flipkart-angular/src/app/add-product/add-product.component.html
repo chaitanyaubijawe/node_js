@@ -9,24 +9,11 @@
 
     <div class="col-sm-10">
 
-      <input type="text" (input)="onInputChange($event)" />
-      <br>
-      <input type="text" [(ngModel)]="biDirectional"/>
-
-      <br>
      <input type="text" [(ngModel)]="productTS.name"/>
       <br>
       <input type="text" [(ngModel)]="productTS.price"/>
       <br>
 
-      This is :: {{ stringInterpolation }}
-      <br>
-      Bidirectional :: This is :: {{ biDirectional }}
-      <br>
-      Product:: This is NAME:: {{ productTS.name }}
-      <br>
-      Product:: This is Price:: {{ productTS.price }}
-      <br>
       <button class = "btn btn-primary" (click)="addProduct()"  [style]="" [disabled]="!shouldEnable" > Submit...</button>
 
 

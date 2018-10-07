@@ -10,6 +10,9 @@ import {LoggerService} from '../service/logger.service';
 })
 
 export class PocComponent {
+  stringInterpolation:string = "String property binding example";
+  shouldEnable:boolean = true; // this is property binding....
+  biDirectional:string = "This is biderectional binding....";
 
 
   shouldShowTxt:boolean = false;
@@ -32,6 +35,20 @@ export class PocComponent {
     this.loggerService.logMsg("hi there!!");
 
   }
+
+  onInputChange(event:any){
+
+    //console.log(event.target.value);
+
+    this.biDirectional = event.target.value;
+  }
+
+  addProduct(){
+
+
+
+  }
+
 
 
 }

@@ -30,15 +30,7 @@ export class AddProductComponent implements OnInit {
 
     console.log("Inside ngOnInit :: ")
   }
-
-
-  onInputChange(event:any){
-
-    //console.log(event.target.value);
-
-    this.biDirectional = event.target.value;
-  }
-
+  
   addProduct(){
 
   console.log(JSON.stringify(this.productTS));

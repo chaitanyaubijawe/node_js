@@ -22,14 +22,13 @@
     <div class="col-md-5" *ngFor="let product of products">
 
 
-      <app-view-products [productElement]="product" (onPDisplay)="productDisplayed($event)">
+      <app-view-products [productElement]="product" (onPDisplay)="productDisplayed($event)" [productName]="product.name">
 
-        this is the view product thing....
 
 
         <div class="thumbnail border">
 
-          <img class=" img-thumbnail" src="{{product.imgUrl}}" alt="" height="100%" width="100%"/>
+          <img class=" img-thumbnail border" src="https://image.shutterstock.com/image-vector/lcd-tv-monitor-vector-illustration-260nw-154257524.jpg" alt="" height="100%" width="100%"/>
           <!--<img class="border" src="{{product.imgUrl}}" alt="" height="50" width="50"/>-->
 
           <div class="caption">
@@ -41,7 +40,9 @@
               <div class="col-md-8">
                 <p class="lead">
                   Price :{{ product.price | currency }}</p>
+                <button class="btn btn-primary" (click)="testOnChange(product)">Test OnChange</button>
               </div>
+
 
             </div>
 
@@ -57,3 +58,6 @@
 
   </div>
 </div>
+
+<button class="btn btn-primary" (click)="checkObservable()">Test checkObservable</button>
+

@@ -11,6 +11,7 @@ import {LoggerService} from './service/logger.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {ProductsService} from './service/products.service';
 import { ViewProductsComponent } from './view-products/view-products.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ViewProductsComponent } from './view-products/view-products.component';
     ViewProductsComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [LoggerService, ProductsService],
   bootstrap: [AppComponent]
