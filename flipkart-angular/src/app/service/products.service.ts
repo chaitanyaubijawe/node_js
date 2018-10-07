@@ -31,7 +31,7 @@ export class ProductsService{
     }else{
       for(let item of this.products){
 
-        if(item.name === searchText){
+        if(item.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())){
           arrr.push(item)
         }
 
