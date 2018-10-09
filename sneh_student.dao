@@ -1,0 +1,113 @@
+
+var generateAge=function()
+{
+	
+		var age = Math.floor((Math.random() * 50) + 25);
+		return age;
+		
+	
+	
+}
+var generatePhoneNumber=function()
+{
+	var phoneNumber=Math.floor(Math.random() * 10000000000);
+	return phoneNumber;
+}
+
+var insertRandom=function(numberToInsert)
+{	
+	var query="Insert INTO student(id,name,age,phNumber) values(";
+	for(var i=1;i<numberToInsert;i++)
+	{
+		var finalQuery=query+i+","+"Name_"+i+","+generateAge()+","+generatePhoneNumber()+")";
+		console.log(finalQuery);
+	}
+
+}
+
+insertRandom(10);
+
+
+
+var insertStudent=function(studentObj)
+{
+	
+	
+		// var query = "INSERT INTO student ( id, name, age, phNumber) VALUES (1,'xxx', 23, '123234123');"
+		var query = "INSERT INTO student ( ";
+
+
+		
+		var columnClause = ""; // id,age,name,phnu
+		var valuesClause = ""; // 1,22,sdfsd,23231312
+		for(key in studentObj)
+		{
+			//key = id// name // age// phNumber
+			
+			columnClause += key + ",";
+			valuesClause += studentObj[key] + ",";
+			
+			//query  +=   "'" + studentObj[key] + "',"
+
+		}
+		
+		query +=columnClause.slice(0,-1) + ") VALUES (" + valuesClause.slice(0,-1) + ");"
+		
+
+		
+		return query;
+}
+
+
+var query = insertStudent({id:1, name:"xxx", age:20, phNumber:'12232323'})
+
+console.log(query)
+
+var updateStudent=function(studentObj,id)
+{
+	var query="UPDATE student set ";
+	for(var key in studentObj)
+	{
+		query+=""+key+" ='"+studentObj[key]+"',";
+	}
+	query=query.slice(0,-1);
+	query += " WHERE id = " + id + ";";
+	return query;
+}
+
+var query=updateStudent({id:1, name:"xxx", age:20, phNumber:'12232323'},1);
+console.log(query);
+
+var generateUpdateClause=function(studentObj)
+{	var query="return ";
+	for(var key in studentObj)
+	{	
+		query+=""+key+" ='"+studentObj[key]+"',";
+	}
+	return query;
+}
+console.log(generateUpdateClause({id:1, name:"xxx", age:20, phNumber:'12232323'}));
+
+var selectStudent = function (studentObj) {
+
+
+	var query = "SELECT * FROM student WHERE ";
+
+	for(var columnName in studentObj){
+
+		query +=" " + columnName + " = '" + studentObj[columnName] + "' and"
+	}
+	
+	query = query.slice(0,-3) + ";";
+
+	return query;
+}
+
+console.log(selectStudent({name:"updated_name"}));
+console.log(selectStudent({name:"updated_name", age:1}));
+
+
+
+
+
+	
