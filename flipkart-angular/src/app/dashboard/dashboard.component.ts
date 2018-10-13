@@ -103,5 +103,11 @@ export class DashboardComponent implements OnInit {
   }
 
 
+  checkDestroy(){
+    this.products.pop();
+  }
+
+
+
 }
 

@@ -70,4 +70,27 @@ export class ProductsService{
     }
     return this.http.get("/services/products", options);
   }
+
+
+  addProduct(product:Product):Observable<Object>{
+
+    let options = {};
+    // basic validations...
+    if(product.name !== null){
+
+      // let params = new HttpParams().set('searchQuery', searchText);
+      // options["params"] = params;
+
+
+    }
+
+    let body = JSON.stringify(product);
+
+    console.log("This is request payload...",body);
+
+    return this.http.post("/services/product",      product);
+  }
+
+
+
 }

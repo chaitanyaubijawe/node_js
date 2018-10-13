@@ -3,6 +3,7 @@ export class Product{
   name:string;
   price:number;
   imgUrl:string;
+  idproduct:number;
 
   constructor(name:string, price:number, imgUrl:string){
 

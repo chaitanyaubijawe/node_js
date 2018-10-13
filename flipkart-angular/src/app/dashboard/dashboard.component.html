@@ -1,3 +1,13 @@
+<div class="nav">
+
+  <a href="/addproduct" class="nav-link">Add Product</a>
+
+  <a [routerLink]="['addproduct']" class="nav-link">Without going to serverAdd Product</a>
+
+</div>
+
+
+
 <div class="container">
 
 
@@ -41,6 +51,7 @@
                 <p class="lead">
                   Price :{{ product.price | currency }}</p>
                 <button class="btn btn-primary" (click)="testOnChange(product)">Test OnChange</button>
+                <a class="btn btn-primary" [routerLink]="'/productdetails/'+product.idproduct">View Product</a>
               </div>
 
 
@@ -49,6 +60,7 @@
 
           </div>
         </div>
+
 
 
       </app-view-products>
@@ -60,4 +72,5 @@
 </div>
 
 <button class="btn btn-primary" (click)="checkObservable()">Test checkObservable</button>
+<button class="btn btn-primary" (click)="checkDestroy()">Test destroy</button>
 

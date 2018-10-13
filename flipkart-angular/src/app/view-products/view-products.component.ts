@@ -1,6 +1,6 @@
 import {
   Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges, DoCheck, AfterContentInit,
-  AfterContentChecked, AfterViewInit, AfterViewChecked
+  AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy
 } from '@angular/core';
 import {Product} from '../model/product';
 
@@ -9,12 +9,7 @@ import {Product} from '../model/product';
   templateUrl: './view-products.component.html',
   styleUrls: ['./view-products.component.css']
 })
-export class ViewProductsComponent implements OnInit,OnChanges, DoCheck, AfterContentInit,AfterContentChecked, AfterViewInit,AfterViewChecked  {
-
-
-
-
-
+export class ViewProductsComponent implements OnInit,OnChanges, DoCheck, AfterContentInit,AfterContentChecked, AfterViewInit,AfterViewChecked, OnDestroy  {
   @Input('productElement') product:Product;
   @Input() productName:string;
   @Output('onPDisplay') onProductDisplay:EventEmitter<Product> = new EventEmitter<Product>();
@@ -64,5 +59,11 @@ export class ViewProductsComponent implements OnInit,OnChanges, DoCheck, AfterCo
   ngAfterViewChecked(): void {
     console.log("ngAfterViewChecked called!!");
   }
+
+  ngOnDestroy(): void {
+
+    console.log("ngOnDestroy called!!");
+  }
+
 
 }

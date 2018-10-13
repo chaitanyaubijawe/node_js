@@ -12,6 +12,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {ProductsService} from './service/products.service';
 import { ViewProductsComponent } from './view-products/view-products.component';
 import {HttpClientModule} from '@angular/common/http';
+import {RouterModule, Routes} from '@angular/router';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+
+
+const appRoutes:Routes = [
+  {path:"", component:DashboardComponent},
+  {path:"addproduct", component:AddProductComponent},
+  {path:"productdetails/:id", component:ProductDetailComponent}
+];
+
 
 @NgModule({
   declarations: [
@@ -20,10 +30,11 @@ import {HttpClientModule} from '@angular/common/http';
     PocComponent,
     AlertDirective,
     DashboardComponent,
-    ViewProductsComponent
+    ViewProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [LoggerService, ProductsService],
   bootstrap: [AppComponent]

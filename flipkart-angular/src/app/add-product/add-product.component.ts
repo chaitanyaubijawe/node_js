@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../model/product';
+import {Router} from '@angular/router';
+import {ProductsService} from '../service/products.service';
 
 
 
@@ -21,7 +23,8 @@ export class AddProductComponent implements OnInit {
   biDirectional:string = "This is biderectional binding....";
   product = {};
   productTS:Product = new Product(null,null, null);
-  constructor() {
+
+  constructor(private router:Router, private productService:ProductsService) {
 
     console.log("Inside constructor :: ")
   }
@@ -30,10 +33,31 @@ export class AddProductComponent implements OnInit {
 
     console.log("Inside ngOnInit :: ")
   }
-  
+
   addProduct(){
 
-  console.log(JSON.stringify(this.productTS));
+    console.log(JSON.stringify(this.productTS));
+    // send data to server....
+    // redirect to dashboard..
+
+
+    // this.productService.addProduct(this.productTS).subscribe((data)=>{
+    //
+    //     console.log("Product has been added successfully :: ", data);
+    //     this.router.navigate([""]);
+    //
+    // }, (err)=>{
+    //
+    //
+    // }, ()=> {
+    //
+    // });
+
+    this.productService.addProduct(this.productTS).subscribe();
+
+    this.router.navigate([""]);
+
+
 
   }
 }
