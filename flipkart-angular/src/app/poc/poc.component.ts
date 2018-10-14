@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {LoggerService} from '../service/logger.service';
+import {Product} from '../model/product';
+import {NgForm} from '@angular/forms';
 
 @Component({
 
@@ -18,7 +20,7 @@ export class PocComponent {
   shouldShowTxt:boolean = false;
 
   products = [];
-
+  productTS:Product = new Product(null,null, null);
 
   constructor(private loggerService: LoggerService){
 
@@ -49,6 +51,23 @@ export class PocComponent {
 
   }
 
+
+  trimData(data:any){
+    return this.loggerService.subsstring(data);
+  }
+
+  formSubmit(loginForm:NgForm){
+
+    if(loginForm.value.password === "")
+    {
+
+      alert("Password is empty...");
+    }
+
+    console.log("Form submitted...", loginForm)
+
+
+  }
 
 
 }

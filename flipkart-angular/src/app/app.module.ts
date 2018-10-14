@@ -14,6 +14,7 @@ import { ViewProductsComponent } from './view-products/view-products.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import {SubstringPipe} from './shared/substring.pipe';
 
 
 const appRoutes:Routes = [
@@ -31,10 +32,10 @@ const appRoutes:Routes = [
     AlertDirective,
     DashboardComponent,
     ViewProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,SubstringPipe
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, FormsModule, HttpClientModule, RouterModule
   ],
   providers: [LoggerService, ProductsService],
   bootstrap: [AppComponent]
