@@ -1,6 +1,7 @@
 import {Product} from '../model/product';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
@@ -92,5 +93,10 @@ export class ProductsService{
   }
 
 
+  getProductById(id: number) {
 
+    let options = {};
+
+    return this.http.get("/services/product/"+id, options).pipe(map(response => response[0]));
+  }
 }

@@ -15,12 +15,20 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import {SubstringPipe} from './shared/substring.pipe';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {AuthService} from './service/auth.service';
+import { SignOutComponent } from './sign-out/sign-out.component';
+import {AuthGuard} from './auth-guard/auth.guard';
 
 
 const appRoutes:Routes = [
   {path:"", component:DashboardComponent},
-  {path:"addproduct", component:AddProductComponent},
-  {path:"productdetails/:id", component:ProductDetailComponent}
+  {path:"addproduct", component:AddProductComponent, canActivate:[AuthGuard]},
+  {path:"productdetails/:id", component:ProductDetailComponent},
+  {path:"signin", component:SignInComponent},
+  {path:"signup", component:SignUpComponent},
+  {path:"signout", component:SignOutComponent}
 ];
 
 
@@ -32,12 +40,12 @@ const appRoutes:Routes = [
     AlertDirective,
     DashboardComponent,
     ViewProductsComponent,
-    ProductDetailComponent,SubstringPipe
+    ProductDetailComponent,SubstringPipe, SignInComponent, SignUpComponent, SignOutComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, RouterModule
+    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoggerService, ProductsService],
+  providers: [LoggerService, ProductsService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
