@@ -1,0 +1,8 @@
+{
+  "db": {
+    "connectionLimit": 10,
+    "host": "localhost-qa",
+    "user": "root-qa",
+    "database": "cnb_qa"
+  }
+}

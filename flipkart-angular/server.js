@@ -1,6 +1,8 @@
 
 // Express is a module. Provides you a way to implement HTTP server.
 const express = require("express");
+const request = require("request");
+
 // create a express application object .
 const app = express();
 // import DB connection. so that DB intilizes at application start up
@@ -28,8 +30,31 @@ class Server {
 
     initializeRoutes() {
 
+
+        //enable proxy here...
+
+      app.use(['/proxy/'],function(req,res) {
+
+
+            let originUrl = req.url;
+            let abc = req.url;
+            console.log("Herer:  ", originUrl);
+            let url = 'http://localhost:8082' + originUrl;
+            req.pipe(
+
+                request({'url':url},function(err, response, body){
+
+            })
+
+            ).pipe(res);
+
+        }
+      );
+
+
         // use body parser... currently parsing only JSON requests.
         app.use(bodyParser.json());
+
 
         app.use(function(req,res,next){
 
@@ -53,6 +78,7 @@ class Server {
 
            // res.sendFile(__dirname + "/index.html");
             // res.sendFile(path.join( "/Users/chaitanya/CB/node_training/node_js/flipkart/index.html"));
+
             res.sendFile(path.join(__dirname, "dist/index.html"));
         });
 

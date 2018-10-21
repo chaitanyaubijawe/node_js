@@ -62,3 +62,30 @@ General
 
 ## to keep an eye on .ts files. it will look for modified files and replace that piece of code in dist/ directory.
 ng build --watch
+
+
+
+nodemon
+npm install nodemon --global
+
+then
+nodemon server.js
+
+this will keep an eye on server.js modification and will restart server on its own.
+
+
+ng build --prod
+
+used to solve many issues related to caching.
+- it improves your UI performance
+  by reducing size of your *.js files.
+- it will not generate *.map file. these files aer helpfull for debugging ui code at browser...
+
+
+npm run build:
+  - this will look build in package.json and execute that command....
+
+
+TODO:
+  - serve : *.gzip
+
