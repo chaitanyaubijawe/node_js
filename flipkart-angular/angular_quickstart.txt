@@ -26,7 +26,10 @@ ng  g c add.product
 // will generate component without .spec.ts files.
 ng g c dashboard --spec=false
 
+// dependencies
 
+npm install express --save
+npm install path --save
 
 // to start our server .... flipkart-server
 step 1- Copy server.js

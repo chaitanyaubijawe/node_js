@@ -40,6 +40,8 @@ class Server {
             let abc = req.url;
             console.log("Herer:  ", originUrl);
             let url = 'http://localhost:8082' + originUrl;
+
+
             req.pipe(
 
                 request({'url':url},function(err, response, body){
@@ -59,6 +61,13 @@ class Server {
         app.use(function(req,res,next){
 
           console.log("URL called ", req.url);
+
+          // get authorization header from req...
+          // req.header.authorization..
+          // check that auth is valid......
+          //if valid then next()
+          // else res.redirect(/login)
+
           next();
 
         });
