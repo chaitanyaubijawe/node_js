@@ -1,2 +1,2 @@
 var a = 8;
-console.log(A);
+console.log(a);
