@@ -1,8 +1,0 @@
-{
-  "db": {
-    "connectionLimit": 100,
-    "host": "localhost",
-    "user": "root",
-    "database": "cnb"
-  }
-}
