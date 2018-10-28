@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <script src="/angular.js"> //
+    </script>
+    <script>
+
+        var app = angular.module('myApp', []);
+
+        app.factory("myFactory", function ($http) {
+
+            function getData() {
+                return $http.get("/services/products");
+
+            }
+            return {getData : getData}
+        });
+
+        app.controller('myCtrl', function($scope, myFactory) {
+            $scope.firstName= "John";
+            $scope.lastName= "This is coming from js...";
+
+            myFactory.getData().then(function (data) {
+                $scope.users = data;
+
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+        });
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+
+
+    <h1>Hello {{firstName}}!</h1>
+    <h1>Hello {{lastName}}!</h1>
+    <h1>Hello {{users}}!</h1>
+
+</div>
+</body>
+</html>

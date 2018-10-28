@@ -1,0 +1,28 @@
+{
+  "name": "flipkart",
+  "version": "1.0.0",
+  "description": "a sample ecommerce project in node js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyaubijawe/node_js.git"
+  },
+  "keywords": [
+    "node",
+    "mysql",
+    "mongo"
+  ],
+  "author": "cnb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitanyaubijawe/node_js/issues"
+  },
+  "homepage": "https://github.com/chaitanyaubijawe/node_js#readme",
+  "dependencies": {
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
+  }
+}

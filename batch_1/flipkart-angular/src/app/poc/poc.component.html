@@ -1,0 +1,122 @@
+<div class="container">
+  <hr>
+
+
+
+  {{ '500' |  currency:"INR" }}
+  {{ 'Ohh I see you ate one two.....' |  slice:"param1" }}
+  {{ '12345678901' |  slice:"20" }}
+  {{ trimData('MYOWNMETHODTRIOMMINGDATAA.....') }}
+
+
+  <hr>
+
+  <div>
+
+    <form (submit)="formSubmit(f)"  #f="ngForm">
+
+      <input type="text" ngModel name="userName"/>
+      <br>
+      <input type="password" ngModel name="password"/>
+      <br>
+      <input type="submit" />
+
+
+    </form>
+  </div>
+
+
+</div>
+
+
+
+
+This is POC!!
+
+<!--<div class="container">-->
+
+  <!--<div class="row">-->
+
+    <!--<div class="col-sm-8">-->
+
+
+      <!--<button class="btn btn-primary" (click)="showToggle()"> Submit </button>-->
+
+
+    <!--</div>-->
+    <!--<div class="col-sm-8">-->
+
+      <!--<div *ngIf="shouldShowTxt; else showNotAvlbl">-->
+
+        <!--This is coming from ng if part.-->
+        <!--NG If is true now.....-->
+
+      <!--</div>-->
+
+
+      <!--<ng-template #showNotAvlbl>-->
+
+        <!--This will come if toggle is false...-->
+
+
+      <!--</ng-template>-->
+
+
+    <!--</div>-->
+
+    <!--<div class="col-sm-8" *ngFor="let item of products; index as i">-->
+
+      <!--I want this to be added  dynamically ::- {{i}}-->
+
+
+    <!--</div>-->
+
+
+    <!--<button class = "btn btn-primary" myAlert> Text </button>-->
+  <!--</div>-->
+
+<!--</div>-->
+
+
+
+<hr>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-12"></div>
+    <h1> POC works! </h1>
+
+    <div class="col-sm-10">
+
+      <input type="text" (input)="onInputChange($event)" />
+      <br>
+      <input type="text" [(ngModel)]="biDirectional"/>
+
+      <br>
+      <input type="text" [(ngModel)]="productTS.name"/>
+      <br>
+      <input type="text" [(ngModel)]="productTS.price"/>
+      <br>
+
+      This is :: {{ stringInterpolation }}
+      <br>
+      Bidirectional :: This is :: {{ biDirectional }}
+      <br>
+      Product:: This is NAME:: {{ productTS.name }}
+      <br>
+      Product:: This is Price:: {{ productTS.price }}
+      <br>
+      <button class = "btn btn-primary" (click)="addProduct()"  [style]="" [disabled]="!shouldEnable" > Submit...</button>
+
+
+    </div>
+
+
+
+  </div>
+
+</div>
+
+

@@ -1,0 +1,6 @@
+{
+  "db": {
+    "connectionLimit": "CON_LIMIT",
+    "database": "DB_NAME"
+  }
+}

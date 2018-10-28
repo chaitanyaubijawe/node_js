@@ -1,0 +1,10 @@
+{
+  "db": {
+    "connectionLimit": 10,
+    "host": "localhost",
+    "user": "root",
+    "database": "cnb"
+  },
+
+  "serverPort":"8080"
+}
