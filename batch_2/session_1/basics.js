@@ -170,18 +170,51 @@ for(let index of Object.keys(obj)){
 arr = [1,2,3,5];
 
 // Exercise -1
-// string "1,2,3,5";
+// "1,2,3,5";
 // string "1:2:3:5";
 // string "1|2|3|5";
+console.log("#####################");
+let opp = arr.join(",");
+console.log("Using join method :: ", opp, typeof(opp));
+
+let output = "";
+let sep = ",";
+for(let index=0; index < arr.length ; index++){
+
+  console.log("Index value heree::: ", index, arr[index]); // arr[0], arr[1]
+
+  output = output + "," + arr[index];
+  // output = output + sep + arr[index];
+}
+
+output =  "'" + output.substring(1) + "';"
+
+console.log("output is :: ", output);
+console.log("#####################");
+
 
 
 // Exercise -2
 obj = {"key_1":"value_1", "key_2":"value_2"};
+console.log("#####################");
 
+
+
+let output_1 = "";
+for(let key in obj){
+
+  console.log("key :::: of obj :: ",key ,obj[key]);
+
+  output_1 = output_1 + key + " = \"" + obj[key] + "', ";
+
+}
+console.log("Output_1 :: ", output_1);
+console.log("#####################");
 obj = {"key_1":"value_1", "key_2":"value_2", "key_3":"value_2"};
 
 //  string:: "key_1 = value_1, key_2 = value_2;"
 //  string:: "key_1 = value_1, key_2 = value_2, key_3 = value_3;"
+//  string:: "key_1 = 'value_1', key_2 = 'value_2', key_3 = 'value_3';"
 
 
 
