@@ -1,0 +1,10 @@
+TABLE IN BOOTSTRAP (Add cellspacing)
+
+.pro-table table {
+  border-collapse:separate;
+  border-spacing:10px 10px;
+}​​​​​​​​​​​​​
+.pro-table  table th, table td{
+border-bottom:3px solid #7d8334;
+}​​​​​​​​​​​​​
+
