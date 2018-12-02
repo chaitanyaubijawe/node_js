@@ -9,15 +9,6 @@ let getCities = function (country, state){
 
   // STEP-2 : create a city....
   // let cityName1 = getCityName("IND", "MAH", "CITY_1", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
-  // let cityName2 = getCityName("IND", "MAH", "CITY_2", "-");
 
   // STEP-3 : add city to container.....
   // cities.push(cityName1);
@@ -28,7 +19,7 @@ let getCities = function (country, state){
 
   for(let i = 1; i <= 10; i++){
 
-    //let cityName = country + "_" + state + "_" + "city_" + i;
+    // let cityName = country + "_" + state + "_" + "city_" + i;
     let cityName = getCityName(country, state, "city_"+i, "-");
     // log here.....
     //console.log(cityName);
@@ -57,9 +48,25 @@ let getCityName = function (country, state, city, separator) {
 // let cityName5 = getCityName("IND", "MAH", "CITY_5", "-");
 // console.log(cityName1, cityName2, cityName3,cityName4,cityName5);
 
- let citiesMP = getCities("IND", "MP"); // 10 cities...
-// let citiesMAH = getCities("IND", "MAH");
+let citiesMP = getCities("IND", "MP"); // 10 cities... array.....
+let citiesMAH = getCities("IND", "MAH");
 //
  console.log(citiesMP);
- // console.log(getCities("IND", "MP"));
-// console.log(citiesMAH);
+ console.log(citiesMAH);
+
+
+// {"MAH":["city_1","city_2"]}
+
+
+let obj = {};//key value
+
+obj["key_1"] = "value....";
+obj["key_2"] = 2;
+obj["key_3"] = [1,2,2,3,4,5];
+
+obj["MAH"] = citiesMAH;
+obj["MP"] = citiesMP;
+console.log(obj);
+
+console.log(obj["MAH"]);
+console.log(obj["MP"]);
