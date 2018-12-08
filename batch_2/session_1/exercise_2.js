@@ -34,6 +34,7 @@ for(let i = 1 ; i <= 5 ; i++){
   console.log("using for loop :: ", i, result);
   arr_2.push(result);
 }
+console.log(arr_2);
 
 
 function m3() {
