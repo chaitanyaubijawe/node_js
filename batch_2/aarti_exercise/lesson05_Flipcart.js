@@ -13,21 +13,20 @@ let category = {
       "By Screen Size": ["48-Above", "39-43", "32"]
     },
     "Washing Machine": ["Fully Automatic", "Semi Automatic"],
-    "Refrigerators": {
-      "Footwear": ["Sports", "Formal", "Casual"]
-    },
-    "Men": {
-      "Footwear": ["Casual", "Sports", "Formal"],
-      "Clothing": ["T-shirts", "Shirts", "Kurtas"],
-      "Fabrics": ["Kurta Fabric", "Sherwani Fabric"]
-    },
-    "Women": {
-      "Cloting": ["Western Wear", "Winter Wear"],
-      "Ethnic Wear": ["Sarees", "Kurti"],
-      "Footwear": ["Footwear", "Sandals"]
-    }
+    "Refrigerators": ["Single Door", "Double Door", "Side by Side"]
+  },
+  "Men": {
+    "Footwear": ["Casual", "Sports", "Formal"],
+    "Clothing": ["T-shirts", "Shirts", "Kurtas"],
+    "Fabrics": ["Kurta Fabric", "Sherwani Fabric"]
+  },
+  "Women": {
+    "Cloting": ["Western Wear", "Winter Wear"],
+    "Ethnic Wear": ["Sarees", "Kurti"],
+    "Footwear": ["Footwear", "Sandals"]
   }
 }
+
 
 //console.log(category);
 
@@ -43,4 +42,26 @@ let v2 = v1["Camera"];
 v2.push("Sony");
 v2.push("Canon");
 v2.push("Nikon");
-console.log(category);
+//console.log(category);
+
+//{"Mobiles":[], "Laptop":[]}
+function electronic() {
+  let elec_1 = category["Electronics"];
+  //console.log(elec_1);
+  return elec_1
+}
+
+//console.log(electronic());
+
+// Show Electronics & Appliances through a function
+function all_app() {
+  let app_1 = category["Appliances"];
+  //console.log(app_1);
+
+  let app_2 = electronic();
+  console.log(app_2);
+  let all_app1 = app_2 + ":::" + app_1;
+
+  return all_app1;
+}
+console.log(all_app());
