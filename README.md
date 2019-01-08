@@ -24,7 +24,7 @@
 		- Industry standard coding practices
 
 
-# Angular : 
+# Angular :
 	- Introduction to Angular
 	- Revolution of angular from version 1 to latest.
 	- Simple Angular Application
