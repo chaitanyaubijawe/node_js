@@ -9,3 +9,8 @@ NPM:
     - it will download express lib and make an entry in package.json under dependency.
   - npm install
     - it will read dependency from package.json and download those.
+  - npm install body-parser --save
+    - parse post/put request body....
+what is difference between PUT and POST.
+- POST is used to insert.
+- PUT is used to update.
