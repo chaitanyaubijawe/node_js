@@ -11,9 +11,12 @@ using NPM as shown below.
 After having the raw contents, body-parser will parse it using one of four strategies, depending on the specific middleware you decided to use:
 
 1) bodyParser.raw(): Doesn't actually parse the body, but just exposes the buffered up contents from before in a Buffer on req.body.
-
 2) bodyParser.text(): Reads the buffer as plain text and exposes the resulting string on req.body.
-
 3) bodyParser.urlencoded(): Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST) and exposes the resulting object (containing the keys and values) on req.body. For comparison; in PHP all of this is automatically done and exposed in $_POST.
-
 4) bodyParser.json(): Parses the text as JSON and exposes the resulting object on req.body.
+---------------------------------------------------------------------------------------------------------------------------------------
+What is middleware?
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
+
+If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+https://expressjs.com/en/guide/writing-middleware.html
