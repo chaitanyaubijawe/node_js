@@ -20,6 +20,9 @@ CREATE TABLE `vatsalya`.`soaps` (
   'alopevira soap...',
   20);
 
+  -- INSERT INTO soaps(`name`, `description`, `price`) values ( 'aloe-post-api', 'Aloeviera soap....', '5' )
+
+-- INSERT INTO soaps(`name`, `description`, `price`) values (\'aloe-post-api\',  \'Aloeviera soap....\',  \'5\'')
 -- Step-4 select data from table
   SELECT * FROM vatsalya.soaps;
   -- with where clause...
