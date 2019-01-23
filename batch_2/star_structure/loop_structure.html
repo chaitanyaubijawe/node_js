@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="dynamic">
+
+    </div>
+    <script type="text/javascript">
+
+      function starline(){
+        let dynamic = document.getElementById('dynamic');
+        let newline = "";
+        for(i=0; i<=5; i++){
+          for(x = 0; x <= i; x++){
+          newline +=  "*";
+          console.log(newline);
+       }
+          newline += "</br>";
+        }
+      dynamic.innerHTML += newline;
+      }
+
+starline();
+
+
+    </script>
+  </body>
+
+</html>
