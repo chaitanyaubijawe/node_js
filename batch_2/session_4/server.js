@@ -12,6 +12,7 @@ let dbConfig = {
 };
 
 
+console.log("Dir name :: Constant var provided by nodejs runtime :: " , __dirname);
 let pool = mysql.createPool(dbConfig);
 
 console.log(pool);
@@ -192,6 +193,15 @@ app.put('/soap/:id', function m1(req, res){
   console.log("POST:: This piece of code is called via browser.....", reqBody);
   res.send({"hi":"there :  This is post..."});
 });
+
+// Step: 5 : send HTML to end user..
+
+app.get("/",function (req, res) {
+
+
+  res.sendFile(__dirname +"/index.html");
+
+} )
 // Step -3- Ends
 
 // Step -4
