@@ -202,6 +202,16 @@ app.get("/",function (req, res) {
   res.sendFile(__dirname +"/index.html");
 
 } )
+
+
+app.get("/angular-1",function (req, res) {
+
+
+  res.sendFile(__dirname +"/angular_1.html");
+
+} )
+
+app.use(express.static(__dirname +'/dist'));
 // Step -3- Ends
 
 // Step -4
