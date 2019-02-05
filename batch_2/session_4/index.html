@@ -1,0 +1,90 @@
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<script>
+
+
+function getSoapDataUsingJquery(){
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:8080/soaps?searchQuery=alo",
+  "method": "GET",
+  "headers": {
+    "Cache-Control": "no-cache",
+    "Postman-Token": "a0205943-8c96-daec-9947-461c64455221"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+}
+
+function getSoapData(){
+
+
+
+
+
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+
+    let soapData = JSON.parse(this.responseText);// [{name:asda, descript:"asd" , price}, {}, {} ]
+
+    let dynamicData = "";
+    for(let soap of soapData)
+    {
+      let htmlData = "<div> ";
+      console.log(soap);
+
+      htmlData += " Name: " + soap.name + " <br>" ;
+      htmlData += " Description: " + soap.description + " <br>" ;
+      htmlData += " <img src='https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiI_d3Zz4rgAhWBeysKHXz-AkUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.in%2FHimalaya-Herbals-Neem-Turmeric-Soap%2Fdp%2FB01IMZHV9C&psig=AOvVaw2BvDRdm_3um70XAIORmFmJ&ust=1548563763271629' > </img>" ;
+      htmlData += " Price: " + soap.price + " <br> <br> <br>" ;
+      htmlData += "</div>" ;
+
+      dynamicData += htmlData;
+    }
+    document.getElementById('data').innerHTML = dynamicData;
+
+  }
+});
+
+xhr.open("GET", "http://localhost:8080/soaps?searchQuery=aloe");
+xhr.setRequestHeader("Cache-Control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "5596dccc-00e7-a6fe-2fc9-aa402a78cd06");
+
+xhr.send(data);
+
+
+}
+
+</script>
+
+<body>
+
+    Hi there. Welcome to Soap Mall.
+
+    <button id="search" onclick="getSoapData()">Search Soaps</button>
+    <button id="searchJQUERy" onclick="getSoapDataUsingJquery()">Search SoapsJQUERY </button>
+
+    <div id="data">
+
+
+    </div>
+
+</body>
+</html>

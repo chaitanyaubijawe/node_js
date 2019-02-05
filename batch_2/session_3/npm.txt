@@ -1,0 +1,16 @@
+NPM:
+  - Node package manager..
+  - npm install <packageName>
+    - it will create a folder node_modules in current directory and download only package...
+  - npm init
+    - it will create package.json
+    - it has got dependencies....
+  - npm install express --save
+    - it will download express lib and make an entry in package.json under dependency.
+  - npm install
+    - it will read dependency from package.json and download those.
+  - npm install body-parser --save
+    - parse post/put request body....
+what is difference between PUT and POST.
+- POST is used to insert.
+- PUT is used to update.
