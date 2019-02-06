@@ -20,3 +20,22 @@ Middleware functions are functions that have access to the request object (req),
 
 If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
 https://expressjs.com/en/guide/writing-middleware.html
+---------------------------------------------------------------------------------------------------------------------------------------
+
+=>
+var a = [
+  "We're up all night 'til the sun",
+  "We're up all night to get some",
+  "We're up all night for good fun",
+  "We're up all night to get lucky"
+];
+
+// These two assignments are equivalent:
+
+// Old-school:
+var a2 = a.map(function(s){ return s.length });
+
+// ECMAscript 6 using arrow functions
+var a3 = a.map( s => s.length );
+
+-------------------------------------------------------------------------------------------------------------------------
