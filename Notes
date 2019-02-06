@@ -38,4 +38,11 @@ var a2 = a.map(function(s){ return s.length });
 // ECMAscript 6 using arrow functions
 var a3 = a.map( s => s.length );
 
+
+(parameters) => { statements } OR  parameters => { statements }
+If we have no parameters, we express an arrow function like this:
+
+() => { statements }
+
+
 -------------------------------------------------------------------------------------------------------------------------
