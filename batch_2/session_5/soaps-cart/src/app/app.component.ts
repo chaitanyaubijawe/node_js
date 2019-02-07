@@ -9,12 +9,12 @@ export class AppComponent {
   title = 'Soaps-cart';
   anotherTitle = "Vatsalya....";
   abc="";
-  
+
   constructor(){
 
     this.abc = "therfewrr";
 
-    console.log("this is constructor.....");
+    // console.log("this is constructor.....");
 
     this.m1();
   }
