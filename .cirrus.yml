@@ -3,4 +3,4 @@ container:
 check_task:
   node_modules_cache:
     folder: node_modules
-  script: node batch_1/session_1/basics.js
+  script: node batch_2/session_1/basics.js
