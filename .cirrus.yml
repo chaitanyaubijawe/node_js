@@ -3,4 +3,4 @@ container:
 check_task:
   node_modules_cache:
     folder: node_modules
-  script: echo "Hello!"
+  script: ls -al
