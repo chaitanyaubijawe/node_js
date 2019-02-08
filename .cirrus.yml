@@ -3,4 +3,4 @@ container:
 check_task:
   node_modules_cache:
     folder: node_modules
-  script: ls -al
+  script: node batch_1/session_1/basics.js
