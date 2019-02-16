@@ -21,3 +21,22 @@
     - [(ngModel)]="property in ts"
     - need to import FormsModule inside app.module.ts
     - use FormsModule inside "imports" section of @NgModule decorator.
+6. How to add bootstrap and jquery
+    - npm i bootstrap --save
+    - npm i jquery@1.9.1 --save
+    OR
+    - npm i jquery --save
+7. Exercise
+    - modify templateUrls, styles @component
+    - routing..... {path:"dashboard", component:ClassNameOfComponent}
+        - modify app-routing.module.ts
+        - HTML :: <a [routerLink]="dashboard" />
+    - header and footers component.
+    - dashboard
+        - search box
+        - Soap and soaps[]
+        - *ngfor
+        - (click) -- buy button
+    - lifecycle hooks.
+        - ngOnInit
+        - ngOnDestroy

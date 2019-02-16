@@ -1,20 +1,44 @@
-<p>
-  poc works!
-  <br>
+<!--<p>-->
+  <!--poc works!-->
+<!--</p>-->
+  <!--<br>-->
 
-  <br>
-  Uname :: <input [(ngModel)]="biDirectionalUserName" name="searchBox"/>
-  <br>
-  Pwd ::  <input [(ngModel)]="biDirectionalPwd" name="searchBox" type="password"/>
-  <br>
+  <!--<br>-->
+  <!--Uname :: <input [(ngModel)]="biDirectionalUserName" class = "input-group-sm"  name="searchBox"/>-->
+  <!--<br>-->
+  <!--Pwd ::  <input [(ngModel)]="biDirectionalPwd" class = "input-group-sm"  name="searchBox" type="password"/>-->
+  <!--<br>-->
 
-  Event ::  <input (input) = "eventOnChange($event)" name="sBox" type="password"/>
-  <br>
+  <!--Event ::  <input (input) = "eventOnChange($event)" class = "input-group-sm" name="sBox" type="password"/>-->
+  <!--<br>-->
 
-  Submit ::  <button (click) = "onSubmit()" name="btn"> Submit </button>
-  <br>
+<!--<h3>Submit</h3> ::  <button (click) = "onSubmit()" class= "btn-primary" name="btn"> Submit </button>-->
+  <!--<br>-->
 
 
-  {{ biDirectional }}
-  <br>
-</p>
+    <!--<h3>{{ biDirectional }}</h3>-->
+  <!--<br>-->
+
+
+
+
+
+<div class="container">
+
+
+
+  <div class="row" >
+
+    <div class="col-sm-3" *ngFor="let soapItem of soaps">
+      <img [src]="soap.url" class ="img-fluid"/>
+      <div class="row">Name : {{soapItem.name}}</div>
+      <div class="row">Description: {{soapItem.description}}</div>
+      <div class="row">Price: {{soapItem.price}}</div>
+      <div class="row"><button type="button" class="btn-primary" (click)="addToCart()"> Buy </button> </div>
+
+    </div>
+
+  </div>
+
+
+</div>
