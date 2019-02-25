@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {PocComponent} from "./poc/poc.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {ViewProductDetailsComponent} from "./view-product-details/view-product-details.component";
 
 
 const routes: Routes = [
 
-  {path:"poc", component:PocComponent},
-  {path:"signin", component:PocComponent},
-  {path:"signup", component:PocComponent},
-  {path:"dashboard", component:PocComponent}
+  {path:"", component:DashboardComponent},
+  {path:"viewproduct/:id", component:ViewProductDetailsComponent},
+  {path:"poc", component:PocComponent}
 
 ];
 

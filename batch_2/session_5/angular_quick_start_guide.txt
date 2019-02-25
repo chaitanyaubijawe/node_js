@@ -40,3 +40,18 @@
     - lifecycle hooks.
         - ngOnInit
         - ngOnDestroy
+
+
+-- General Exercise for logic building...
+1 > input.txt
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+
+
+ node exercise.js input.txt 1-10 11-20
+
+ O/p -
+    1-10 - count is :: 48
+    11-20 - count is :: 8

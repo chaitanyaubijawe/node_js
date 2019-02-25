@@ -1,0 +1,34 @@
+<div class="container">
+<form>
+
+<table class="table">
+  <tbody>
+  <tr *ngFor="let element of array">
+    <th scope="row">{{element.id}}</th>
+    <td>
+      <label>
+       <!-- <input type="checkbox" checklist-model="element.name" checklist-value="name">
+        <input type="checkbox" (click) = "handleClick()">-->
+        <input type="checkbox" value="{{element.name}}"
+               [checked]="element.Checked"
+               (change)="isChecked(element, $event)"
+               />
+        {{ element.name}}
+      </label>
+
+    </td>
+    <td>INR {{element.price}}</td>
+    <td class="quantity">
+      <input type="number" [(ngModel)]="element.quantity"  id="qty_input" name="qty_input" class="form-control form-control-sm" value="1" min="1">
+
+    </td>
+        </tr>
+
+        </tbody>
+      </table>
+
+      <button type="button" (click)="onSubmit()">Submit</button>
+
+      </form>
+
+</div>

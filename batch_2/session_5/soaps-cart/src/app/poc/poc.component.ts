@@ -1,9 +1,12 @@
-import {Component, OnInit, OnChanges, Input, OnDestroy, DoCheck, AfterViewChecked} from '@angular/core';
+import {AfterViewChecked, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {
-  AfterContentChecked, AfterContentInit, AfterViewInit,
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewInit,
   SimpleChanges
 } from "@angular/core/src/metadata/lifecycle_hooks";
 import {Soap} from "../model/Soap";
+import {Observable} from "rxjs/index";
 
 @Component({
   //selector: '[app-poc]',
@@ -20,17 +23,18 @@ import {Soap} from "../model/Soap";
   // color: blueviolet;
   // }`]
 })
-export class PocComponent implements OnInit , OnChanges, OnDestroy, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked{
-
+export class PocComponent implements OnInit, OnChanges, OnDestroy, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
 
 
   biDirectionalUserName: String = "this is USERNAME from TS....";
   biDirectionalPwd: String = "this is PWD from TS....";
 
-  @Input() arg:String;
+  @Input() arg: String;
 
-  private soap:Soap= new Soap("Anti Bacterial", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804");
-  private soaps:Soap[] = new Array();
+  private flag: boolean = false;
+
+  private soap: Soap = new Soap(1,"Anti Bacterial", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804");
+  private soaps: Soap[] = new Array();
 
   constructor() {
 
@@ -41,24 +45,24 @@ export class PocComponent implements OnInit , OnChanges, OnDestroy, DoCheck, Aft
 
     console.log("Inside ngOnInit...");
 
-    this.soaps.push(new Soap("Anti ARRAY_1", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
-    this.soaps.push(new Soap("Anti ARRAY_2", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
-    this.soaps.push(new Soap("Anti ARRAY_3", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
+    this.soaps.push(new Soap(1,"Anti ARRAY_1", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
+    this.soaps.push(new Soap(2,"Anti ARRAY_2", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
+    this.soaps.push(new Soap(3,"Anti ARRAY_3", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
 
   }
 
 
-  ngOnChanges(changes: SimpleChanges): void{
+  ngOnChanges(changes: SimpleChanges): void {
 
     console.log("Inside ngOnChanges..." + this.arg)
   }
 
   ngOnDestroy(): void {
 
-    console.log("Inside ngOnDestroy..." )
+    console.log("Inside ngOnDestroy...")
   }
 
-  ngDoCheck(): void{
+  ngDoCheck(): void {
 
     console.log("Inside ngDoCheck")
   }
@@ -68,12 +72,12 @@ export class PocComponent implements OnInit , OnChanges, OnDestroy, DoCheck, Aft
     console.log("Inside ngAfterContentInit")
   }
 
-  ngAfterContentChecked(): void{
+  ngAfterContentChecked(): void {
 
     console.log("Inside ngAfterContentChecked")
   }
 
-  ngAfterViewInit(): void{
+  ngAfterViewInit(): void {
     console.log("Inside ngAfterViewInit")
 
   }
@@ -82,10 +86,6 @@ export class PocComponent implements OnInit , OnChanges, OnDestroy, DoCheck, Aft
 
     console.log("Inside ngAfterViewChecked")
   }
-
-
-
-
 
 
   eventOnChange(event: any) {
@@ -97,17 +97,56 @@ export class PocComponent implements OnInit , OnChanges, OnDestroy, DoCheck, Aft
   }
 
 
-
   onSubmit() {
 
     alert("submit called!!")
   }
 
-  addToCart(){
+  addToCart() {
 
     console.log("Soap added to cart");
+
+
+    this.httpGet().subscribe(
+      (data) => {
+
+        console.log("Data after next...... ", data);
+
+
+      },
+      (err) => {
+
+        console.log("Data after error...... ", err);
+
+      },
+      () => {
+        console.log("Clean up code goes here....Data after error...... ");
+      }
+    );
+
+
+
+    // this.httpGet().subscribe();
+
+    // to increase performance of UI. we can simply make http calls in bg.
   }
 
+
+  httpGet() {
+
+    return new Observable((observe) => {
+
+        let flag = false;
+        if (flag) {
+          observe.next("this is observable/ accomplished...");
+        } else {
+          observe.error("Error occured while subscribing to observable....")
+        }
+
+       observe.complete();
+      }
+    );
+  }
 
 
 }

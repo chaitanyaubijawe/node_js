@@ -33,8 +33,20 @@
       <img [src]="soap.url" class ="img-fluid"/>
       <div class="row">Name : {{soapItem.name}}</div>
       <div class="row">Description: {{soapItem.description}}</div>
-      <div class="row">Price: {{soapItem.price}}</div>
-      <div class="row"><button type="button" class="btn-primary" (click)="addToCart()"> Buy </button> </div>
+      <div class="row">Price: {{soapItem.price | currency }}</div>
+
+      <div class="row" *ngIf="true" >
+
+        <button [disabled]="flag" type="button" class="btn-primary" (click)="addToCart()"> Buy </button>
+
+      </div>
+
+      <div class="" *ngIf="true">
+        Display below text/element
+      </div>
+
+
+
 
     </div>
 
