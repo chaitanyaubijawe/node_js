@@ -13,6 +13,8 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
 
+    let items = localStorage.getItem("elements");
+    this.appService.elementsToCkeckout = JSON.parse(items);
     console.log("Elememnts :: ",this.appService.elementsToCkeckout)
   }
 

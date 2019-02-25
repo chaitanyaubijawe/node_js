@@ -56,7 +56,8 @@ export class ItemFeedComponent implements OnInit {
         this.op_array.push(item);
       }
     }
-    this.appService.elementsToCkeckout = this.op_array;
+    // this.appService.elementsToCkeckout = this.op_array;
+    localStorage.setItem("elements", JSON.stringify(this.op_array));
     this.router.navigate(['checkout']);
 
 
