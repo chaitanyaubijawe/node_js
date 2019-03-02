@@ -42,8 +42,14 @@ export class ItemFeedComponent implements OnInit {
 
   op_array:any = [];
 
-  constructor(public router:Router, public appService:AppService) {}
-  ngOnInit() {}
+  constructor(public router:Router, public appService:AppService) {
+
+
+  }
+
+  ngOnInit() {
+
+  }
 
   private onSubmit() {
     console.log(`Checkbox clicked`);
@@ -51,14 +57,14 @@ export class ItemFeedComponent implements OnInit {
     this.op_array = [];
     for(let item of this.array){
 
-
       if(item.Checked){
         this.op_array.push(item);
       }
     }
     // this.appService.elementsToCkeckout = this.op_array;
     localStorage.setItem("elements", JSON.stringify(this.op_array));
-    this.router.navigate(['checkout']);
+    // this.router.navigate(['checkout']);
+    this.router.navigateByUrl('/checkout');
 
 
 }
@@ -68,7 +74,7 @@ export class ItemFeedComponent implements OnInit {
 
     console.log("here...", event.srcElement.checked, element.quantity);
     element.Checked = event.srcElement.checked;
-    this.op_array.push(element);
+    //this.op_array.push(element);
   }
 
 

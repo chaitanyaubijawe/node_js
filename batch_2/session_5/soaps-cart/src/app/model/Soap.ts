@@ -1,10 +1,10 @@
 export class Soap{
 
-  private name:String;
-  private id:Number;
-  private description:String;
-  private url:String;
-  private price:Number;
+  public name:String;
+  public id:Number;
+  public description:String;
+  public url:String;
+  public price:Number;
 
   constructor(id:Number,name:String, description:String, price:Number, url:String){
 

@@ -8,6 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewProductGroupComponent } from './view-product-group/view-product-group.component';
 import { ViewProductDetailsComponent } from './view-product-details/view-product-details.component';
 import {ProductService} from "./services/product.service";
+import { AddProductComponent } from './add-product/add-product.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import {ProductService} from "./services/product.service";
     PocComponent,
     DashboardComponent,
     ViewProductGroupComponent,
-    ViewProductDetailsComponent
+    ViewProductDetailsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   // providers: [ProductService],
   providers: [],
