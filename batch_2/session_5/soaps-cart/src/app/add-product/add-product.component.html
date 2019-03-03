@@ -46,6 +46,20 @@
         </div>
       </div>
 
+
+      <div class="form-group">
+        <label for="description">Alter Ego</label>
+        <input type="text" class="form-control" id="url"
+               [(ngModel)]="model.url" name="url" required minlength="5" #url="ngModel">
+
+        <div [hidden]="url.valid || url.pristine"
+             class="alert alert-danger">
+          url is required
+        </div>
+
+
+      </div>
+
       <button type="submit" class="btn btn-success" [disabled]="!soapForm.form.valid">Submit</button>
 
 

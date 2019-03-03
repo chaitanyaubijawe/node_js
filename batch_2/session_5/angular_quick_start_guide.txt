@@ -55,3 +55,13 @@
  O/p -
     1-10 - count is :: 48
     11-20 - count is :: 8
+
+--
+1. copy server.js place it into root folder of UI code.
+2. modify index.html path to refer index.html from dist folder.
+3. copy all dependencies from package.json of server.js to UI code package.json.
+4. npm install
+5. go to UI folder
+    - ng build --watch
+    - open another terminaL
+        - node server

@@ -1,12 +1,15 @@
 
 -- Step 1- Creat schema/ create database
 -- Step-2 create table
-CREATE TABLE `vatsalya`.`soaps` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(100) NULL,
-  `description` VARCHAR(505) NULL,
-  `price` INT NULL,
-  PRIMARY KEY (`id`));
+
+CREATE TABLE `soaps` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `description` varchar(505) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `url` varchar(450) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Step-3 insert data to table
   INSERT INTO `vatsalya`.`soaps`

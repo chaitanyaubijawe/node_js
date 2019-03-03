@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Soap} from "../model/Soap";
 import {AppService} from "../services/app.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-product',
@@ -9,7 +10,7 @@ import {AppService} from "../services/app.service";
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService:AppService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -18,7 +19,7 @@ export class AddProductComponent implements OnInit {
   public submitted = false;
   public model:Soap = new Soap(1,"Anti Bacterial", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804");
   // creating object of service.....
-  private appService:AppService = new AppService();
+  // private appService:AppService = new AppService();
 
   onSubmit() {
 
@@ -41,6 +42,20 @@ export class AddProductComponent implements OnInit {
 
   postData(){
 
-    this.appService.postSoapData(this.model);
+    this.appService.postSoapData(this.model).subscribe(
+      (data)=>{
+
+        console.log("Data aala re :: ", data);
+        this.router.navigateByUrl("/");
+      },
+      (error)=>{
+
+        console.log("Error aala re :: ", error);
+      },
+      ()=>{
+
+        console.log("Finally");
+      }
+      );
   }
 }
