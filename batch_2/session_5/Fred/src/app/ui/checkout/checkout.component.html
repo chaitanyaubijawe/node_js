@@ -1,0 +1,30 @@
+<p>
+  checkout works!
+</p>
+
+
+
+<div class="container">
+
+
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let element of appService.elementsToCkeckout">
+
+        <th scope="row">{{element.id}}</th>
+        <td>
+          <label>
+            {{ element.name}}
+          </label>
+
+        </td>
+        <td>INR {{element.price}}</td>
+        <td>QTY {{element.quantity}}</td>
+
+      </tr>
+
+      </tbody>
+    </table>
+
+
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+
+  <!--<div class="row" *ngIf="displayStyle === 'grid' ">-->
+  <!--<div class="row" [style]="list">-->
+  <div class="row">
+
+    <div class="col-sm-3" *ngFor="let soapItem of products">
+
+      <a [routerLink]="'/viewproduct/' + soapItem.id" > <img [src]="soapItem.url" class="img-fluid"/>
+        <div class="row">Name : {{soapItem.name}}</div>
+        <div class="row">Description: {{soapItem.description}}</div>
+        <div class="row">Price: {{soapItem.price | currency }}</div>
+
+        <div class="row">
+
+          <button type="button" class="btn-primary" (click)="addToCart()"> Buy</button>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+</div>

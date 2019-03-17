@@ -1,0 +1,67 @@
+1. Angular cli
+  - npm install @angular/cli --global
+  - ng --version
+2. Help
+  - ng help
+  ** build (b) Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.
+  ** generate (g) Generates and/or modifies files based on a schematic.
+  ** new (n) Creates a new workspace and an initial Angular app.
+  ** serve (s) Builds and serves your app, rebuilding on file changes.
+
+3. Create a angular 2> project
+  - ng new <project name>
+4. how to start.
+  - ng serve
+    - it will start your angular project and served by dev server provided by angular....
+5. generate Component
+  - ng g c poc
+  - add <app-poc></app-poc> into .html(index or app.component.html)
+  - ngModel - Directive...
+    - used for bidirectional mapping....
+    - [(ngModel)]="property in ts"
+    - need to import FormsModule inside app.module.ts
+    - use FormsModule inside "imports" section of @NgModule decorator.
+6. How to add bootstrap and jquery
+    - npm i bootstrap --save
+    - npm i jquery@1.9.1 --save
+    OR
+    - npm i jquery --save
+7. Exercise
+    - modify templateUrls, styles @component
+    - routing..... {path:"dashboard", component:ClassNameOfComponent}
+        - modify app-routing.module.ts
+        - HTML :: <a [routerLink]="dashboard" />
+    - header and footers component.
+    - dashboard
+        - search box
+        - Soap and soaps[]
+        - *ngfor
+        - (click) -- buy button
+    - lifecycle hooks.
+        - ngOnInit
+        - ngOnDestroy
+
+
+-- General Exercise for logic building...
+1 > input.txt
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+    1 2 3 2 2 4 4 5 5 6 7 10 15 20
+
+
+ node exercise.js input.txt 1-10 11-20
+
+ O/p -
+    1-10 - count is :: 48
+    11-20 - count is :: 8
+
+--
+1. copy server.js place it into root folder of UI code.
+2. modify index.html path to refer index.html from dist folder.
+3. copy all dependencies from package.json of server.js to UI code package.json.
+4. npm install
+5. go to UI folder
+    - ng build --watch
+    - open another terminaL
+        - node server
