@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well well-sm">
+        <h2 *ngIf="submitted">Thanks for your submission</h2>
+        <form class="form-horizontal" (ngSubmit)="onSubmit()"  *ngIf="!submitted" #form="ngForm">
+          {{form.valid}}
+          <fieldset>
+            <legend class="text-center">Enquiry</legend>
+
+            <!-- Name input-->
+            <div class="form-group" [ngClass]="{
+            'has-error': nameInput.invalid && nameInput.touched,
+            'has-sucess': nameInput.valid && nameInput.touched
+            }">
+              <label class="col-md-3 control-label" for="name">Name</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Your name" class="form-control" [(ngModel)]="user.name" required minlength="3"
+                       #nameInput="ngModel"
+                       />
+                <div class="help-block" *ngIf="nameInput.invalid && nameInput.touched">
+  Name is required
+                </div>
+Valid : {{ nameInput.valid }}<br>
+Touched: {{ nameInput.touched }}
+
+              </div>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group" [ngClass]="{
+            'has-error': emailInput.invalid && emailInput.touched,
+            'has-sucess': emailInput.valid && emailInput.touched
+            }">
+              <label class="col-md-3 control-label" for="email">Your E-mail</label>
+              <div class="col-md-9">
+                <input id="email" name="email" type="email" placeholder="Your email" class="form-control"
+                       [(ngModel)]="user.email"
+                       required email
+                       #emailInput="ngModel" />
+                <div class="help-block" *ngIf="emailInput.invalid && emailInput.touched">
+                  Email is required
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Message body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Your message</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5" [(ngModel)]="user.message"
+                          required
+                          #messageInput="ngModel"></textarea>
+
+
+              </div>
+            </div>
+
+
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+              </div>
+
+              {{diagnostic}}
+            </div>
+
+
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9">{{ model.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Alter Ego</div>
+    <div class="col-xs-9">{{ model.description }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">price</div>
+    <div class="col-xs-9">{{ model.price }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  <button class="btn btn-primary" (click)="postData()">Confirm</button>
+</div>
+</div>
+-->
