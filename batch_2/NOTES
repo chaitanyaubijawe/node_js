@@ -1,0 +1,17 @@
+req.body holds parameters that are sent up from the client as part of a POST request. 
+
+body-parser parses your request and converts it into a format from which you can easily extract relevant information that you may need.
+For example, let’s say you have a sign-up form at your frontend. You are filling it, and requesting server to save the details somewhere.
+
+Extracting username and password from your request goes as simple as below if you use body-parser.
+…………………………………………………….
+var loginDetails = {
+username : request.body.username,
+password : request.body.password
+};
+…………………………………………………….
+So basically, body-parser parsed your incoming request, assembled the chunks containing your form data, then created this body object for you and filled it with your form data.
+And you just used it.
+
+How bodyParser() works?
+https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90

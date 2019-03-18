@@ -1,0 +1,48 @@
+Why is body-parser used?
+
+To handle HTTP POST request in Express.js version 4 and above, you need to install middleware module called body-parser.
+body-parser extract the entire body portion of an incoming request stream and exposes it on req.body.
+
+This body-parser module parses the JSON, buffer, string and URL encoded data submitted using HTTP POST request. Install body-parser 
+using NPM as shown below.
+
+------ npm install body-parser --save
+
+After having the raw contents, body-parser will parse it using one of four strategies, depending on the specific middleware you decided to use:
+
+1) bodyParser.raw(): Doesn't actually parse the body, but just exposes the buffered up contents from before in a Buffer on req.body.
+2) bodyParser.text(): Reads the buffer as plain text and exposes the resulting string on req.body.
+3) bodyParser.urlencoded(): Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST) and exposes the resulting object (containing the keys and values) on req.body. For comparison; in PHP all of this is automatically done and exposed in $_POST.
+4) bodyParser.json(): Parses the text as JSON and exposes the resulting object on req.body.
+---------------------------------------------------------------------------------------------------------------------------------------
+What is middleware?
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
+
+If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+https://expressjs.com/en/guide/writing-middleware.html
+---------------------------------------------------------------------------------------------------------------------------------------
+
+=>
+var a = [
+  "We're up all night 'til the sun",
+  "We're up all night to get some",
+  "We're up all night for good fun",
+  "We're up all night to get lucky"
+];
+
+// These two assignments are equivalent:
+
+// Old-school:
+var a2 = a.map(function(s){ return s.length });
+
+// ECMAscript 6 using arrow functions
+var a3 = a.map( s => s.length );
+
+
+(parameters) => { statements } OR  parameters => { statements }
+If we have no parameters, we express an arrow function like this:
+
+() => { statements }
+
+
+-------------------------------------------------------------------------------------------------------------------------
