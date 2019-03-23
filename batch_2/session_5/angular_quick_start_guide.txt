@@ -65,3 +65,13 @@
     - ng build --watch
     - open another terminaL
         - node server
+6. Pipe
+    - ng g pipe shared/trim
+        - shared/trim : shared is folder and trim is the name of your pipe or file.
+        - it will create two files inside shared folder.
+        - Pipetransform is the interface which consitst method called as transform
+        - in method transform is used to format your text.....
+        - command will also modify app.module.ts -- it will add Trim class in declaration field.
+
+
+     /api/v1/employees
