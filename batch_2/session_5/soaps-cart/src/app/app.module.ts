@@ -10,6 +10,8 @@ import { ViewProductDetailsComponent } from './view-product-details/view-product
 import {ProductService} from "./services/product.service";
 import { AddProductComponent } from './add-product/add-product.component';
 import {HttpClientModule} from "@angular/common/http";
+import { TrimPipe } from './shared/trim.pipe';
+import { ClickEventDirective } from './shared/click-event.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {HttpClientModule} from "@angular/common/http";
     DashboardComponent,
     ViewProductGroupComponent,
     ViewProductDetailsComponent,
-    AddProductComponent
+    AddProductComponent,
+    TrimPipe,
+    ClickEventDirective
   ],
   imports: [
     BrowserModule,

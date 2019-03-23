@@ -8,16 +8,18 @@
 
       <a [routerLink]="'/viewproduct/' + soapItem.id" > <img [src]="soapItem.url" class="img-fluid"/>
         <div class="row">Name : {{soapItem.name}}</div>
-        <div class="row">Description: {{soapItem.description}}</div>
+        <div class="row">Description: {{soapItem.description | trim:10 }}</div>
         <div class="row">Price: {{soapItem.price | currency }}</div>
-
+      </a>
         <div class="row">
 
           <button type="button" class="btn-primary" (click)="addToCart()"> Buy</button>
+          <br>
+          <button type="button" class="btn-primary" appClickEvent> Directive </button>
 
         </div>
 
-      </a>
+
 
     </div>
 
