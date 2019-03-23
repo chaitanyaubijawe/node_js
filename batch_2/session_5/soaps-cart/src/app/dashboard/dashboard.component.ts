@@ -32,17 +32,29 @@ export class DashboardComponent implements OnInit {
     // this.soaps.push(new Soap(3,"Anti ARRAY_3", "antibacterial soap with fragrance..", 100, "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/b/b5/Soap_large.jpg/revision/latest?cb=20150728164804"));
 
 
-    this.appService.getSoaps(null).subscribe((data)=>{
-      console.log("Data aala re :: ", data);
-      this.soaps = <Soap[]>data; // typecasting. convert data to array of Soap.
+    this.appService.getEmp().subscribe((data)=>{
 
-    }, (error)=>{
+      console.log(data);
 
-      console.log("Error aala re :: ", error);
+    },(error)=>{
 
-    }, ()=>{
+
+    },()=>{
+
 
     });
+
+    // this.appService.getSoaps(null).subscribe((data)=>{
+    //   console.log("Data aala re :: ", data);
+    //   this.soaps = <Soap[]>data; // typecasting. convert data to array of Soap.
+    //
+    // }, (error)=>{
+    //
+    //   console.log("Error aala re :: ", error);
+    //
+    // }, ()=>{
+    //
+    // });
   }
 
 

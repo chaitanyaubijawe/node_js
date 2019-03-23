@@ -1,0 +1,12 @@
+{
+  "/services": {
+    "target": "http://dummy.restapiexample.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/services": ""
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+
+  }
+}

@@ -31,4 +31,16 @@ export class AppService {
 
     return this.http.get(url);
   }
+
+  getEmp(){
+
+    return this.http.get("/services/api/v1/employees");
+  }
+
+  getProductDetails(id: Number) {
+
+
+    return this.http.get("/soap/"+id);
+
+  }
 }
