@@ -4,6 +4,8 @@ import {PocComponent} from "./poc/poc.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ViewProductDetailsComponent} from "./view-product-details/view-product-details.component";
 import {AddProductComponent} from "./add-product/add-product.component";
+import {EnquiryFormsReactiveComponent} from "./enquiry-forms-reactive/enquiry-forms-reactive.component";
+import {AuthGuard} from "./auth.guard";
 
 
 const routes: Routes = [
@@ -11,7 +13,8 @@ const routes: Routes = [
   {path:"", component:DashboardComponent},
   {path:"viewproduct/:id", component:ViewProductDetailsComponent},
   {path:"poc", component:PocComponent},
-  {path:"add", component:AddProductComponent}
+  {path:"add", component:AddProductComponent, canActivate:[AuthGuard]},
+  {path:"contact", component:EnquiryFormsReactiveComponent}
 
 ];
 

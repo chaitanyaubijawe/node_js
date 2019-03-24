@@ -13,6 +13,8 @@ export class AddProductComponent implements OnInit {
   constructor(private appService:AppService, private router:Router) { }
 
   ngOnInit() {
+
+    console.log("here!!!")
   }
 
   public priceArr=[10,20,30];

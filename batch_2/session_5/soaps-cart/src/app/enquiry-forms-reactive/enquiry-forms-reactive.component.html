@@ -1,0 +1,32 @@
+<p>
+  enquiry-forms-reactive works!</p>
+
+  <div>
+
+    Name :: <input type="text" [formControl]="name"/>
+
+    <button type="button" (click)="submitMyform()">Submit</button>
+  </div>
+
+<p>
+  Value: {{ name.value }}
+</p>
+
+
+<br>
+<br>
+
+<form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+
+  <div>
+    Number :: <input type="text" formControlName="number"/>
+  </div>
+  <div>
+    Email :: <input type="text" formControlName="email"/>
+  </div>
+
+  <div>
+
+    <button type="submit" [disabled]="!myFormGroup.valid">Submit</button>
+  </div>
+</form>
