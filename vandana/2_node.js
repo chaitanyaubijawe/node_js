@@ -122,6 +122,17 @@ for(var value of arr){
 
 console.log("------------------------");
 
+console.log("------------forEachforEach------------");
+arr.forEach(
+
+  function(value){
+    console.log("forEach :: Value is -- " + value);
+  }
+)
+
+
+console.log("------------forEachforEach------------");
+
 
 // key value pair...
 var obj = {};
@@ -137,3 +148,74 @@ console.log(obj["key_1"]);
 console.log(obj["key_2"]);
 
 console.log("------------------------");
+
+
+
+arr = [{"key_1":"value_1","key_2":"value_2","key_3":"value_3"}, {"key_1":"value_1","key_2":"value_2","key_3":"value_3"},{"key_1":"value_1","key_2":"value_2","key_3":"value_3"}]
+console.log("------------forEachforEach------------");
+arr.forEach(
+  function(value){
+    console.log("forEach :: Value is -- " + value.key_1 + "-- " + value.key_2 + "-- "+ value.key_3);
+  }
+)
+
+console.log("------------forEachforEach------------");
+
+
+// JSON
+var o = {"key_1":"value_1", "key_2":"value_2"};
+
+
+console.log(o["key_1"]);
+console.log(o["key_2"]);
+
+o = [{"key_1":"value_1", "key_2":"value_2"}, {"index2key_1":"value_1", "index2key_2":"value_2"}];
+
+// {"key_1":"value_1", "key_2":"value_2"}
+var dd = o[0];
+console.log(dd["key_1"]);// value_1
+
+var ddd = o[0]["key_1"];// value_1
+console.log(ddd);
+
+
+console.log("###################");
+
+var clientInfo = {"id":1, "clientName":"Vandana", "contactNumber":"1234567890"};
+
+for(var key in clientInfo){
+
+  console.log("Key is :: " + key + " -- valiue is --" + clientInfo[key]);
+}
+
+
+console.log(clientInfo["qwertyu"]);
+
+console.log(Object.keys(clientInfo));
+
+for(var key of Object.keys(clientInfo)){
+
+  console.log(clientInfo[key]);
+}
+// {"IND":{"MP":[], "UP":[]}}
+// WorldMap
+  // - Ind
+    // - MP
+      // - Jabalpur
+      // - indoor
+      // - city_..1
+      // - city_..10
+    // - UP
+      // - Luckhnow
+      // - ilahabad
+      // - city_..1
+      // - city_..10
+    // - Bihar
+      // - Patna
+      // - city_..1
+      // - city_..10
+  // - USA
+    // - CT
+    // - ABC
+    // - XYZ
+var WorldMap = {"key":{"inner":"innervalue", "2":"two"}}
