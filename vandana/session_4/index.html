@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    </script>
+    <script>
+
+        var app = angular.module('myApp', []);
+
+        app.factory("myFactory", function ($http) {
+
+            function getData() {
+                return $http.get("https://jsonplaceholder.typicode.com/todos/1");
+
+            }
+            function postData() {
+                return $http.get("https://jsonplaceholder.typicode.com/todos/1");
+
+            }
+
+            return {getData : getData, postData:postData}
+        });
+
+        app.controller('myCtrl', function($scope,$http, myFactory) {
+            $scope.firstName= "John";
+            $scope.lastName= "This is coming from js...";
+
+            // $http.get("https://jsonplaceholder.typicode.com/todos/1").then(function (data) {
+            //     $scope.myData = data.data;
+            //     console.log("inside data capture....");
+            //
+            // }).catch(function (error) {
+            //     console.log(error);
+            // });
+
+            myFactory.getData().then(function (data) {
+                $scope.myData = data.data;
+                console.log("inside data capture....");
+
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            console.log("This will be executed firsdt....");
+
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+    First Name: <input type="text" ng-model="firstName" ><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+
+
+    <h1>Hello {{firstName}}!</h1>
+    <h1>Hello {{lastName}}!</h1>
+    <h1>Hello {{myData}}!</h1>
+
+</div>
+</body>
+</html>
