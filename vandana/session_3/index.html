@@ -1,0 +1,97 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<script>
+
+
+function callAPI(){
+
+
+  var data = null;
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+
+    console.log("This will called 5 times.... ", this.readyState);
+    if (this.readyState === 4) {
+      console.log("Response obtained...", this.responseText);
+
+      var obj = JSON.parse(this.responseText);
+
+      document.getElementById("userId").innerHTML = obj["userId"];
+      document.getElementById("title").innerHTML = obj["title"];
+      document.getElementById("completed").innerHTML = obj["completed"];
+
+    }
+  });
+
+  xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+  xhr.send(data);
+
+  console.log("Here......");
+
+}
+
+
+function callUsingAJAXJquery(){
+
+  $.get( "https://jsonplaceholder.typicode.com/todos/1", function( data ) {
+
+    // $( ".result" ).html( data );
+    // alert( "Load was performed." );
+
+    console.log(data);
+    // var obj = JSON.parse(data);
+    var obj = data;
+
+    document.getElementById("userId").innerHTML = obj["userId"];
+    document.getElementById("title").innerHTML = obj["title"];
+    document.getElementById("completed").innerHTML = obj["completed"];
+
+  });
+
+}
+
+</script>
+
+
+
+
+<body>
+
+
+<b>Requesting to https://jsonplaceholder.typicode.com/todos/1 </b>
+<br>
+<br>
+<br>
+
+<button onclick="callAPI()">CALL API</button>
+<br>
+<br>
+<br>
+<button onclick="callUsingAJAXJquery()">CALL API JQUERY</button>
+<br>
+<br>
+<br>
+
+<div id= "userId">
+</div>
+<br>
+<br>
+<br>
+<div id= "title">
+</div>
+<br>
+<br>
+<br>
+<div id= "completed">
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>
