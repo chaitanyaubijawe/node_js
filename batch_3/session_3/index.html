@@ -1,0 +1,48 @@
+<html>
+
+<header>
+  <script>
+
+      function m1(){
+
+        var data = null;
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+
+            console.log(this.responseText);
+            document.getElementById('data').innerHTML = this.responseText;
+
+          }
+        });
+
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/7");
+        xhr.setRequestHeader("Cache-Control", "no-cache");
+        xhr.setRequestHeader("Postman-Token", "5c34d61f-f315-834e-6bb7-54accac0e5bd");
+
+        xhr.send(data);
+      }
+  </script>
+</header>
+
+<body>
+
+  Hey there:: This is client calling API :: https://jsonplaceholder.typicode.com/todos/7
+
+</br>
+</br>
+</br>
+<button onclick="m1()"> SUBMIT </button>
+
+
+<div id="data">
+
+</div>
+
+
+</body>
+
+</html>
