@@ -3,34 +3,10 @@
 <header>
   <script>
 
-      function m1(){
-
-        var data = null;
-
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function () {
-          if (this.readyState === 4) {
-
-            console.log(this.responseText);
-            document.getElementById('data').innerHTML = this.responseText;
-
-          }
-        });
-
-        xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/7");
-        xhr.setRequestHeader("Cache-Control", "no-cache");
-        xhr.setRequestHeader("Postman-Token", "5c34d61f-f315-834e-6bb7-54accac0e5bd");
-
-        xhr.send(data);
 
 
-        document.getElementById('data').innerHTML = "Hey where is my data....";
-      }
 
-
-      function get(){
+      function get(url, headers){
 
         let p = new Promise((resolve, reject) => {
 
@@ -46,24 +22,21 @@
             }
           });
 
-          xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/7");
-          xhr.setRequestHeader("Cache-Control", "no-cache");
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Cache-Control", headers["Cache-Control"]);
           xhr.setRequestHeader("Postman-Token", "5c34d61f-f315-834e-6bb7-54accac0e5bd");
 
           xhr.send(data);
           //document.getElementById('data').innerHTML = "Hey where is my data....";
         });
 
-
         return p;
-
-
       }
 
       function getData() {
 
-
-        get().then(function(data){
+        let headers ={"Cache-Control":"no-cache", "Authorization":"Basic asdasdasd"}
+        get("https://jsonplaceholder.typicode.com/todos/7", headers).then(function(data){
 
           document.getElementById('data').innerHTML = data;
         }).catch( (error) => {
