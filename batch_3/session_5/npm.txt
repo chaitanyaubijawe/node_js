@@ -1,0 +1,8 @@
+npm
+  - used for installing libraries in JS..
+  - npm init
+    - created a file called package.json
+      - it holds dependencies of your project....
+  - npm install bootstrap --save
+    - it will add dependency in package.json (dependencies)
+    - it will download all js of bootstrap and paste it inot node_modules.

@@ -1,0 +1,17 @@
+{
+  "name": "session_5",
+  "version": "1.0.0",
+  "description": "sample project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "cb",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
