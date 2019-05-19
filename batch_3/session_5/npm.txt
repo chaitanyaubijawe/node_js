@@ -6,3 +6,6 @@ npm
   - npm install bootstrap --save
     - it will add dependency in package.json (dependencies)
     - it will download all js of bootstrap and paste it inot node_modules.
+  - npm install
+    - it will look for dependencies in packages.json
+    - and download those if not already downloaded.
