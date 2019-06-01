@@ -22,4 +22,9 @@ export class ViewProductGroupComponent implements OnInit {
     console.log("Inside ngOnInit of view ....")
   }
 
+  addToCart(){
+
+    alert("hey there!!");
+  }
+
 }
