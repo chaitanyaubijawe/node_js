@@ -1,0 +1,18 @@
+Prerequisite
+  - Node
+  - Npm
+  - @angular-cli
+    - installation
+      - npm install -g <package_name>
+      - npm install -g @angular/cli
+      - npm install -g @angular/cli@8 -- for specific version
+        - g -> global. It will install angular cli globally
+      - ng new e-cart
+        - it will create e-cart folder. download all dependency
+      - ng serve
+        - it will build and run your angular code
+      - ng build
+        - it will build your project and put it into dist/e-cart
+      - ng generate component dashboard
+      - npm install jquery@1.9.1 --save
+      - npm install bootstrap --save
