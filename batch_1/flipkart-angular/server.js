@@ -11,7 +11,7 @@ const DB = require("./server_modules/db/DBConnection").dBConnection;
 const bodyParser = require("body-parser");
 // import controllers
 const flipkartApiController = require("./server_modules/controllers/flipkart.api.controller").flipkartApiController;
-const PORT = 8080;
+const PORT = 4200;
 // config to read config from file and env.
 const config = require("config");
 
@@ -39,7 +39,7 @@ class Server {
             let originUrl = req.url;
             let abc = req.url;
             console.log("Herer:  ", originUrl);
-            let url = 'http://localhost:8082' + originUrl;
+            let url = 'http://localhost:8080' + originUrl;
 
 
             req.pipe(

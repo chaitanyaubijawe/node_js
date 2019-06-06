@@ -9,13 +9,24 @@
 
     <div class="col-sm-10">
 
-     <input type="text" [(ngModel)]="productTS.name"/>
+     Order id <input type="text" [(ngModel)]="obj.ORDER_ID"/>
       <br>
-      <input type="text" [(ngModel)]="productTS.price"/>
+      Cust ID <input type="text" [(ngModel)]="obj.CUST_ID"/>
+      <br>
+      TXN_AMOUNT <input type="text" [(ngModel)]="obj.TXN_AMOUNT"/>
+      <br>
+      MOBILE_NO <input type="text" [(ngModel)]="obj.MOBILE_NO"/>
+      <br>
+
+      EMAIL <input type="text" [(ngModel)]="obj.EMAIL"/>
       <br>
 
       <!--<button class = "btn btn-primary" (click)="addProduct()"  [style]="" [disabled]="!shouldEnable" > Submit...</button>-->
-      <button class = "btn btn-primary" (click)="addProduct()"  [style]="" > Submit...</button>
+      <button class = "btn btn-primary" (click)="paytm()"  [style]="" > Submit...</button>
+
+
+
+
 
 
     </div>
@@ -23,5 +34,23 @@
 
 
   </div>
+
+</div>
+
+
+<div>
+
+  <form ngNoForm #myFormPost name="myFormPost" id="payForm" [action]="url" method="POST">
+
+    <ng-container *ngFor="let input of formDataArr">
+
+      <input type="text" [name]="input.name" [value]="input.value" />
+
+
+    </ng-container>
+
+    <button (click)="onPost()">Post</button> </form>
+
+
 
 </div>

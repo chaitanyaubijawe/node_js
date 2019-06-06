@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {Paytmreq} from "../model/paytmreq";
 
 @Injectable()
 export class ProductsService{
@@ -90,6 +91,20 @@ export class ProductsService{
     console.log("This is request payload...",body);
 
     return this.http.post("/services/product",      product);
+  }
+
+
+  payReq(paytemReq:Paytmreq):Observable<Object>{
+
+    let options = {};
+    // basic validations...
+
+
+    let body = JSON.stringify(paytemReq);
+
+    console.log("This is request payload...",body);
+
+    return this.http.post("/proxy/paytm",      paytemReq);
   }
 
 
