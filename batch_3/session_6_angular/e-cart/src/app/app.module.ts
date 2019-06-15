@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {FormsModule} from "@angular/forms";
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AddProductDetailsComponent } from './add-product-details/add-product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductDetailsComponent,
+    AddProductDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+
+<!-- Media middle -->
+<div class="media">
+  <div class="media-left media-middle">
+    <img [src]= "product.url" class="media-object" >
+    <img [src]= "product.url" class="media-object" >
+  </div>
+
+  <div class="media-body">
+    <h4 class="media-heading">{{product.name}}</h4>
+    <p>{{product.description}}</p>
+    <p>{{product.price | currency}}</p>
+  </div>
+</div>
