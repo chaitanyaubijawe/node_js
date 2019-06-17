@@ -5,7 +5,50 @@
   </h1>
 </div>
 
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['/']">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['/addProduct']">Add Product</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/viewProduct']">View Product</a>
+  </li>
+</ul>
+
+
+<!--<ul class="nav nav-tabs" id="myTab" role="tablist">-->
+  <!--<li class="nav-item">-->
+    <!--<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>-->
+  <!--</li>-->
+  <!--<li class="nav-item">-->
+    <!--<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Add Product</a>-->
+  <!--</li>-->
+  <!--<li class="nav-item">-->
+    <!--<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">View Product</a>-->
+  <!--</li>-->
+<!--</ul>-->
+<!--<div class="tab-content" id="myTabContent">-->
+  <!--<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">-->
+
+    <!--<app-dashboard></app-dashboard>-->
+
+  <!--</div>-->
+  <!--<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">-->
+
+
+    <!--<app-add-product-details></app-add-product-details>-->
+  <!--</div>-->
+  <!--<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">-->
+
+    <!--<app-product-details></app-product-details>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
 <router-outlet></router-outlet>
 <!--<app-dashboard></app-dashboard>-->
 <!--<app-product-details></app-product-details>-->
-<app-add-product-details></app-add-product-details>
+<!--<app-add-product-details></app-add-product-details>-->
