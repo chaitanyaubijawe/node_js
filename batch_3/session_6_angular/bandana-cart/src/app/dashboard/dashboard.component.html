@@ -5,3 +5,9 @@
 
 {{product.name | trimText:10 | uppercase}}
 {{product.price | currency:"INR"}}
+
+<div ngFor="let product of products">
+
+  <app-poc [argument]="'this is argument passed to component....'" [product] = "product"></app-poc>
+
+</div>

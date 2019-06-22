@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { TrimTextPipe } from './pipe/trim-text.pipe';
+import { PocComponent } from './poc/poc.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TrimTextPipe } from './pipe/trim-text.pipe';
     DashboardComponent,
     ViewProductComponent,
     AddProductComponent,
-    TrimTextPipe
+    TrimTextPipe,
+    PocComponent
   ],
   imports: [
     BrowserModule,
