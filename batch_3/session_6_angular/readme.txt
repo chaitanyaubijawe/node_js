@@ -16,3 +16,9 @@ Prerequisite
       - ng generate component dashboard
       - npm install jquery@1.9.1 --save
       - npm install bootstrap --save
+      - ng generate guard auth/auth
+        - this will generate guards.
+        - it is helpful to restrict access to a particular user.
+      - ng g pipe pipe/trimText
+        - used to format text
+        - some default pipes are date, currency, lowercase,uppercase
