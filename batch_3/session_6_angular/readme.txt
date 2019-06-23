@@ -22,3 +22,6 @@ Prerequisite
       - ng g pipe pipe/trimText
         - used to format text
         - some default pipes are date, currency, lowercase,uppercase
+      - ng g directive directives/clickEventListener
+      - ng g service services/app
+        - create service.

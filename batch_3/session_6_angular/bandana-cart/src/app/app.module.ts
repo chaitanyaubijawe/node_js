@@ -8,6 +8,10 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { TrimTextPipe } from './pipe/trim-text.pipe';
 import { PocComponent } from './poc/poc.component';
+import { ClickEventListenerDirective } from './directives/click-event-listener.directive';
+import {AppService} from "./services/app.service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,12 +20,16 @@ import { PocComponent } from './poc/poc.component';
     ViewProductComponent,
     AddProductComponent,
     TrimTextPipe,
-    PocComponent
+    PocComponent,
+    ClickEventListenerDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
+  //providers: [AppService], let angular know your service... Angular will create single object of service and will inject it in required component....
   providers: [],
   bootstrap: [AppComponent]
 })

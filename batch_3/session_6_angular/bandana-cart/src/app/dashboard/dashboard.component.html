@@ -1,13 +1,77 @@
-<p>
-  dashboard works!
-</p>
 
 
-{{product.name | trimText:10 | uppercase}}
-{{product.price | currency:"INR"}}
 
-<div ngFor="let product of products">
+<div class="container" align="center">
+  <div class="row">
 
-  <app-poc [argument]="'this is argument passed to component....'" [product] = "product"></app-poc>
+    <div class="col-md-6 col-md-offset-4">
+
+      <div class="input-group mb-3">
+        <input type="text" [(ngModel)]="searchQuery" class="form-control" placeholder="Product's name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="searchData()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    Your search query is :: {{ searchQuery }}
+  </div>
+
+  <div class="row">
+
+    <!--    <div class="col-md-4">
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]= "product.url" alt="Card image cap" height="400" width="100">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <p class="card-text">{{product.price | currency}}</p>
+              <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]= "product2.url" alt="Card image cap" height="400" width="100">
+            <div class="card-body">
+              <h5 class="card-title">{{product2.name}}</h5>
+              <p class="card-text">{{product2.description}}</p>
+              <p class="card-text">{{product2.price | currency}}</p>
+              <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+          </div>
+
+
+
+    </div>
+
+
+-->
+
+
+    <div class="col-md-6" *ngFor="let product of products">
+
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]= "product.url" alt="Card image cap" height="400" width="100">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text">{{product.price | currency}}</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
 
 </div>

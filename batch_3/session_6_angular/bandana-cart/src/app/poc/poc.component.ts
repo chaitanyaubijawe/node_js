@@ -1,5 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Product} from "../model/product";
+import {AppService} from "../services/app.service";
 
 @Component({
   selector: 'app-poc',
@@ -12,8 +13,9 @@ export class PocComponent implements OnInit, OnDestroy {
   @Input("argument") argumentPassedToPoc:String;
   @Input("product") product:Product;
 
-  constructor() {
-
+  appService:AppService = null;
+  constructor(appService:AppService) {
+    this.appService = appService;
     // alert("constructor....");
 
   }
@@ -21,7 +23,9 @@ export class PocComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // alert("ngOnInit ....")
 
-    console.log("here.....")
+    console.log("here.....");
+    let product:Product = this.appService.getProductData();
+
 
   }
 
