@@ -25,3 +25,9 @@ Prerequisite
       - ng g directive directives/clickEventListener
       - ng g service services/app
         - create service.
+      - HttpClient and HttpClientModule
+        - inject in constructor .... HttpClient in service
+        - inject HttpClientModule in imports section of app.module.ts ()
+
+https://www.mocky.io/
+    - To create mock REST API.
