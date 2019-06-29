@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
     this.product = this.appService.getProductData();
+
     this.appService.getDataHTTP().subscribe((data:Array<Product>) => {
 
         this.products = data;
