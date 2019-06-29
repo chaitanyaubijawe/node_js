@@ -28,6 +28,13 @@ Prerequisite
       - HttpClient and HttpClientModule
         - inject in constructor .... HttpClient in service
         - inject HttpClientModule in imports section of app.module.ts ()
+      - ng serve --proxyConfig=proxy.conf.json
+        - create a file
+            - proxy.conf.json under root directory.....
+            - add configuration mention over https://angular.io/guide/build
+            - run application using
+                - ng serve --proxyConfig=proxy.conf.json
+        - configure proxy for your angular project.....
 
 https://www.mocky.io/
     - To create mock REST API.

@@ -1,0 +1,12 @@
+{
+  "/proxy": {
+    "target": "https://www.mocky.io/",
+    "secure": false,
+    "pathRewrite": {
+      "^/proxy": ""
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+
+  }
+}

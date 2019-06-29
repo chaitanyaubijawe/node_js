@@ -21,13 +21,13 @@ export class AppService {
 
   getDataHTTP(){
 
-    return this.http.get("http://www.mocky.io/v2/5d0f0a003200006600dc6966");
+    return this.http.get("/proxy/v2/5d0f0a003200006600dc6966");
   }
 
 
   postDataHTTP(request:Product){
 
-    return this.http.post("http://www.mocky.io/v2/5d16e23b2f0000aa1425fa37a123", request);
+    return this.http.post("/proxy/v2/5d16e23b2f0000aa1425fa37", request);
   }
 
 }
