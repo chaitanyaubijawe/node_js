@@ -11,7 +11,9 @@ import { PocComponent } from './poc/poc.component';
 import { ClickEventListenerDirective } from './directives/click-event-listener.directive';
 import {AppService} from "./services/app.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import {FormsModule} from "@angular/forms";
     AddProductComponent,
     TrimTextPipe,
     PocComponent,
-    ClickEventListenerDirective
+    ClickEventListenerDirective,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   //providers: [AppService], let angular know your service... Angular will create single object of service and will inject it in required component....
   providers: [],

@@ -19,7 +19,14 @@ export class AuthGuard implements CanActivate {
     //   return  true
     // }
 
-    return true;
+    let loggedIn = localStorage.getItem('loggedIn');
+
+    if(loggedIn === 'true'){
+
+      return true;
+    }
+
+    return false;
   }
 
 }
