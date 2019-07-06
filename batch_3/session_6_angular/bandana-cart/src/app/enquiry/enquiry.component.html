@@ -1,0 +1,34 @@
+<p>
+  enquiry works!
+</p>
+
+
+<form #enqForm="ngForm" (ngSubmit)="postData()">
+
+
+  Name : <input type="text"  required minlength="5"[(ngModel)]="name" name="myName"  #nameHtml="ngModel"/><br>
+
+  <div [hidden]="nameHtml.valid">
+
+    Name is invalid !!!!
+  </div>
+
+  Mobile No : <input type="text" required minlength="10" [(ngModel)]="mobile" name="myMobile" #mobileHtml="ngModel"/>
+
+  <div [hidden]="mobileHtml.valid">
+
+    Mobile No is invalid !!!!
+  </div>
+
+  Binding :: {{name}}
+  <br>
+
+
+
+
+
+  <button [disabled]="!enqForm.form.valid"> Submit</button>
+</form>
+
+
+
